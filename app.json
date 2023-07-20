@@ -1,15 +1,21 @@
 {
   "expo": {
-    "name": "caveirasmobile",
-    "slug": "caveirasmobile",
+    "name": "cbmobile",
+    "slug": "cbmobile",
     "version": "1.0.0",
+    "experiments": {
+      "tsconfigPaths": true
+    },
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
-    "userInterfaceStyle": "light",
+    "icon": "./assets/images/logo.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/images/logo.png",
       "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
+      "backgroundColor": "#B71105"
+      
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
     },
     "assetBundlePatterns": [
       "**/*"
@@ -19,12 +25,14 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "foregroundImage": "./assets/images/logo.png",
+        "backgroundColor": "#FFFFFF"
       }
     },
     "web": {
-      "favicon": "./assets/favicon.png"
+      "favicon": "./assets/images/logo.png",
+      "bundler": "metro"
     }
+    
   }
 }
