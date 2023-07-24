@@ -1,8 +1,7 @@
-import { useNavigation } from "@react-navigation/native";
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
-import { FlatList, Flex, Text, Image, HStack } from "native-base";
+import { FlatList, Flex, Text, Image, HStack, Modal } from "native-base";
 import { View, Dimensions } from "react-native";
 import Loading from "../components/Loading";
 import { itemImages } from "../logosandimages";
@@ -17,15 +16,10 @@ interface ItemProps {
 }
 
 export default function MenuScreen () {
-  const screen = useNavigation();
   const [items] = useState<ItemProps[]>(itemImages);
   const [isLoading, setIsLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
 
-  const [isModalVisible, setModalVisible] = useState(false);
-
-  const toggleModal = () => {
-    setModalVisible(!isModalVisible);
-  };
 
   useEffect(() => {
     // Simulating an asynchronous data fetching process
@@ -56,17 +50,17 @@ export default function MenuScreen () {
           </Text>
         </HStack>
         <Flex mt={4}>
-            <Image
-              onLoadEnd={handleImageLoad}
-              style={{
-                width: 250,
-                height: 250,
-              }}
-              source={{
-                uri: item.imageSrc,
-              }}
-              alt={item.name}
-            />
+              <Image
+                onLoadEnd={handleImageLoad}
+                style={{
+                  width: 250,
+                  height: 250,
+                }}
+                source={{
+                  uri: item.imageSrc,
+                }}
+                alt={item.name}
+              />
         </Flex>
 
         <Text color="#502314" w="90%" mt={2} fontSize="12" textAlign="center">
