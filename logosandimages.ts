@@ -2,6 +2,7 @@ interface ItemProps {
   id: number;
   name: string;
   logoSrc: string;
+  secondaryLogoSrc?: string; 
   imageSrc: string;
   description: string;
   price: string;
@@ -40,4 +41,22 @@ export const itemImages : ItemProps[] = [
     description: "Pão de gergelim, hambúrguer de frango empanado, alface americana e maionese.",
     price: "23.99",
   },
+  {
+    id: 5,
+    name: "CB Melt Bacon",
+    logoSrc: "https://i.imgur.com/5ajpgmK.png",
+    imageSrc: "https://i.imgur.com/dvv6wqy.png",
+    secondaryLogoSrc: "https://i.imgur.com/MyGn9Lo.jpg",
+    description: "Pão de gergelim escuro, hambúrguer artesanal, cheddar melt, cebola caramelizada e bacon.",
+    price: "28.99",
+  },
+  {
+    id: 6,
+    name: "CB Chicken Luxo",
+    logoSrc: "https://i.imgur.com/5vfvgVC.jpg",
+    imageSrc: "https://i.imgur.com/kz8vLiP.png",
+    secondaryLogoSrc: "https://i.imgur.com/Dq0010u.jpg",
+    description: "Pão de gergelim, hambúrguer de frango empanado, alface americana e maionese.",
+    price: "30.00",
+  }
 ]

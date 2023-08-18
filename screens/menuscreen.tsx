@@ -1,7 +1,7 @@
 import Footer from "../components/Footer";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
-import { FlatList, Flex, Text, Image, HStack, Modal } from "native-base";
+import { FlatList, Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions } from "react-native";
 import Loading from "../components/Loading";
 import { itemImages } from "../logosandimages";
@@ -10,6 +10,7 @@ interface ItemProps {
   id: number;
   name: string;
   logoSrc: string;
+  secondaryLogoSrc?: string; 
   imageSrc: string;
   description: string;
   price: string;
@@ -18,8 +19,6 @@ interface ItemProps {
 export default function MenuScreen () {
   const [items] = useState<ItemProps[]>(itemImages);
   const [isLoading, setIsLoading] = useState(true);
-  const [showModal, setShowModal] = useState(false);
-
 
   useEffect(() => {
     // Simulating an asynchronous data fetching process
@@ -41,20 +40,32 @@ export default function MenuScreen () {
               uri: item.logoSrc,
             }}
             alt={item.name}
-            h={12}
-            w={12}
+            h={16}
+            w={16}
           />
 
           <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
           </Text>
+          {item.secondaryLogoSrc &&
+          
+          <Image
+          source={{
+            uri: item.secondaryLogoSrc,
+          }}
+          alt={item.name}
+          h={12}
+          w={12}
+        />
+          
+          }
         </HStack>
         <Flex mt={4}>
               <Image
                 onLoadEnd={handleImageLoad}
                 style={{
-                  width: 250,
-                  height: 250,
+                  width: 200,
+                  height: 200,
                 }}
                 source={{
                   uri: item.imageSrc,
