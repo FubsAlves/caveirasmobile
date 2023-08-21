@@ -5,23 +5,41 @@ import { FlatList, Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions } from "react-native";
 import Loading from "../components/Loading";
 import { itemImages } from "../logosandimages";
+import { useRoute } from "@react-navigation/native";
 
 interface ItemProps {
   id: number;
   name: string;
-  logoSrc: string;
+  logoSrc?: string;
   secondaryLogoSrc?: string; 
   imageSrc: string;
   description: string;
   price: string;
+  category: string;
 }
 
 export default function MenuScreen () {
-  const [items] = useState<ItemProps[]>(itemImages);
+  
+  const route = useRoute();
+  const [items, setItems] = useState<ItemProps[]>(itemImages);
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    // Simulating an asynchronous data fetching process
+    
+    if(route.name === "Chickens") {
+      let filteredItems = items.filter(item => item.category === "Frango");
+      setItems(filteredItems);
+    }
+    else if(route.name === "Tradicional") {
+      let filteredItems = items.filter(item => item.category === "Tradicional");
+      setItems(filteredItems);
+    }
+    else if(route.name === "Assinatura") {
+      let filteredItems = items.filter(item => item.category === "Assinatura");
+      setItems(filteredItems);
+    }
+
+
     setTimeout(() => {
       setIsLoading(false);
     }, 1200);
@@ -35,14 +53,16 @@ export default function MenuScreen () {
     <>
       <Flex w={Dimensions.get('window').width} alignItems="center" h="100%">
         <HStack space={4} alignItems="center" mt={2}>
-          <Image
-            source={{
-              uri: item.logoSrc,
-            }}
-            alt={item.name}
-            h={16}
-            w={16}
-          />
+          {item.logoSrc &&
+            <Image
+              source={{
+                uri: item.logoSrc,
+              }}
+              alt={item.name}
+              h={12}
+              w={12}
+            />
+            }
 
           <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
@@ -50,13 +70,13 @@ export default function MenuScreen () {
           {item.secondaryLogoSrc &&
           
           <Image
-          source={{
-            uri: item.secondaryLogoSrc,
-          }}
-          alt={item.name}
-          h={12}
-          w={12}
-        />
+            source={{
+              uri: item.secondaryLogoSrc,
+            }}
+            alt={item.name}
+            h={12}
+            w={12}
+          />
           
           }
         </HStack>

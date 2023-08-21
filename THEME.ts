@@ -41,6 +41,12 @@ export const THEME = extendTheme({
   colors: {
     caveiras: {
       100: "#502314",
+    },
+    chickens: {
+      100: "#f07100",
+    },
+    caveirito: {
+      100: "#B71105",
     }
   },
   

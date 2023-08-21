@@ -54,6 +54,9 @@ export default function App() {
         <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Menu" component={MenuScreen} />
+          <Stack.Screen name="Chickens" component={MenuScreen} />
+          <Stack.Screen name="Tradicional" component={MenuScreen} />
+          <Stack.Screen name="Assinatura" component={MenuScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>

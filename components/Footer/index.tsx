@@ -1,10 +1,14 @@
 import { Flex, Heading, HStack, IconButton, VStack } from "native-base";
+import { useRoute } from "@react-navigation/native";
 
 import { FontAwesome } from '@expo/vector-icons'; 
 import { Linking } from "react-native";
 
 export default function Footer() {
   
+
+  const route = useRoute();
+
   const url = {
     whatsapp: 'https://api.whatsapp.com/send?phone=5512981473281&text=Boa%20noite!%20Quero%20fazer%20meu%20pedido!',
     instagram: 'https://www.instagram.com/caveiras.burguer/',
@@ -16,7 +20,7 @@ export default function Footer() {
   return (
     <>
       <Flex
-        backgroundColor="#B71105"
+        backgroundColor={route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
         width="100%"
         height="15%"
         alignItems="center"

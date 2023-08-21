@@ -1,13 +1,11 @@
 import { useNavigation, useRoute } from "@react-navigation/native";
 import { Flex, IconButton, Image } from "native-base";
-import { AntDesign } from '@expo/vector-icons'; 
-import { useEffect, useState } from "react";
+import { AntDesign } from '@expo/vector-icons';
 
 export default function Header() {
   
   const navigation = useNavigation();
-  const route = useRoute()
-
+  const route = useRoute();
 
   const handleNavigate = () => {
     navigation.navigate('Home');
@@ -15,7 +13,7 @@ export default function Header() {
   
   return (
     <Flex
-    backgroundColor="#B71105"
+    backgroundColor= {route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
     width="100%"
     height= "20%"
     justifyContent="center"
@@ -36,12 +34,22 @@ export default function Header() {
       />
       ) : ""}
       
-      <Image
+      {route.name === "Chickens" ? (
+        <Image 
+        source={require('../../assets/images/chickens-logo.webp')}
+        alt="Caveiras Logo"
+        h="110px"
+        w="110px"
+        />   
+      ) : (
+        <Image 
         source={require('../../assets/images/caveiras-logo.png')}
         alt="Caveiras Logo"
-        h="130px"
-        w="130px"
-      />   
+        h="110px"
+        w="110px"
+        /> 
+      )}
+      
 
   </Flex>
   )

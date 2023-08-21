@@ -1,5 +1,5 @@
-import { Flex, Text, Image, HStack, Button } from "native-base";
-import { TouchableHighlight, TouchableWithoutFeedback } from "react-native";
+import { Flex, Text, Image, HStack } from "native-base";
+import { TouchableWithoutFeedback } from "react-native";
 
 
 export default function Category({ navigation }: any) {
@@ -20,52 +20,15 @@ export default function Category({ navigation }: any) {
           <HStack justifyContent="space-evenly" alignItems="center">
             <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Lançamentos</Text>
             <Image
-              source={require("../../assets/images/caveiras-rodeio.webp")}
+              source={require("../../assets/images/melt-bacon.jpg")}
               alt="Lançamentos"
               w="60px"
-              h="50px" />
-
-
-            <Image
-              source={require("../../assets/images/arrow.png")}
-              alt="arrow"
-            />
-
+              h="60px" />
           </HStack>
         </Flex>
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate('Menu');
-      }}>
-      <Flex
-        backgroundColor="#FFFFFF"
-        width="100%"
-        height="10%"
-        borderBottomColor="#B71105"
-        borderBottomWidth={6}
-        justifyContent="center"
-      >
-        <HStack justifyContent="space-evenly" alignItems="center">
-          <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Combos</Text>
-          <Image
-            source={require("../../assets/images/caveiras-combo.webp")}
-            alt="Combos"
-            w="60px"
-            h="50px" />
-
-            <Image
-              source={require("../../assets/images/arrow.png")}
-              alt="arrow"
-
-            />
-          
-
-        </HStack>
-
-      </Flex>
-      </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate('Menu');
+        navigation.navigate('Assinaturas');
       }}>
       <Flex
         backgroundColor="#FFFFFF"
@@ -78,26 +41,16 @@ export default function Category({ navigation }: any) {
         <HStack justifyContent="space-evenly" alignItems="center">
           <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Assinaturas</Text>
           <Image
-            source={require("../../assets/images/caveiras-rings.webp")}
+            source={require("../../assets/images/esqueleto-rings.jpg")}
             alt="Assinaturas"
             w="60px"
-            h="50px"
-
-          />
-
-            <Image
-              source={require("../../assets/images/arrow.png")}
-              alt="arrow"
-
-            />
-          
-
+            h="60px" />
         </HStack>
 
       </Flex>
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate('Menu');
+        navigation.navigate('Tradicionais');
       }}>
       <Flex
         backgroundColor="#FFFFFF"
@@ -110,20 +63,38 @@ export default function Category({ navigation }: any) {
         <HStack justifyContent="space-evenly" alignItems="center">
           <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Tradicionais</Text>
           <Image
-            source={require("../../assets/images/caveiras-quarteirao.webp")}
+            source={require("../../assets/images/quarteirao-caveira.jpg")}
             alt="Tradicionais"
             w="60px"
-            h="50px"
+            h="60px"
 
           />
-         
 
-            <Image
-              source={require("../../assets/images/arrow.png")}
-              alt="arrow"
+        </HStack>
 
-            />
+      </Flex>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={() => {
+        navigation.navigate('Chickens');
+      }}>
+      <Flex
+        backgroundColor="#FFFFFF"
+        width="100%"
+        height="10%"
+        borderBottomColor="#B71105"
+        borderBottomWidth={6}
+        justifyContent="center"
+      >
+        <HStack justifyContent="space-evenly" alignItems="center">
+          <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Chickens</Text>
+          <Image
+            source={require("../../assets/images/chicken-de-luxo.jpg")}
+            alt="Chickens"
+            w="60px"
+            h="60px"
 
+          />
+    
         </HStack>
 
       </Flex>
@@ -145,15 +116,9 @@ export default function Category({ navigation }: any) {
             source={require("../../assets/images/caveiras-kids.webp")}
             alt="Kids"
             w="60px"
-            h="50px"
+            h="60px"
 
           />
-
-            <Image
-              source={require("../../assets/images/arrow.png")}
-              alt="arrow"
-
-            />
 
         </HStack>
 
