@@ -30,11 +30,11 @@ export default function MenuScreen () {
       let filteredItems = items.filter(item => item.category === "Frango");
       setItems(filteredItems);
     }
-    else if(route.name === "Tradicional") {
+    else if(route.name === "Tradicionais") {
       let filteredItems = items.filter(item => item.category === "Tradicional");
       setItems(filteredItems);
     }
-    else if(route.name === "Assinatura") {
+    else if(route.name === "Assinaturas") {
       let filteredItems = items.filter(item => item.category === "Assinatura");
       setItems(filteredItems);
     }
@@ -51,8 +51,8 @@ export default function MenuScreen () {
 
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
-      <Flex w={Dimensions.get('window').width} alignItems="center" h="100%">
-        <HStack space={4} alignItems="center" mt={2}>
+      <Flex w={Dimensions.get('window').width} alignItems="center" justifyContent="center" h="100%">
+        <HStack space={4}  mt={2} alignItems="center">
           {item.logoSrc &&
             <Image
               source={{

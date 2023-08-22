@@ -1,10 +1,10 @@
-import { useNavigation, useRoute } from "@react-navigation/native";
+import { NavigationProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Flex, IconButton, Image } from "native-base";
 import { AntDesign } from '@expo/vector-icons';
 
 export default function Header() {
   
-  const navigation = useNavigation();
+  const navigation: NavigationProp = useNavigation();
   const route = useRoute();
 
   const handleNavigate = () => {
@@ -38,15 +38,15 @@ export default function Header() {
         <Image 
         source={require('../../assets/images/chickens-logo.webp')}
         alt="Caveiras Logo"
-        h="110px"
-        w="110px"
+        h="140px"
+        w="140px"
         />   
       ) : (
         <Image 
         source={require('../../assets/images/caveiras-logo.png')}
         alt="Caveiras Logo"
-        h="110px"
-        w="110px"
+        h="140px"
+        w="140px"
         /> 
       )}
       

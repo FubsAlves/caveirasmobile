@@ -55,8 +55,8 @@ export default function App() {
           <Stack.Screen name="Home" component={HomeScreen} />
           <Stack.Screen name="Menu" component={MenuScreen} />
           <Stack.Screen name="Chickens" component={MenuScreen} />
-          <Stack.Screen name="Tradicional" component={MenuScreen} />
-          <Stack.Screen name="Assinatura" component={MenuScreen} />
+          <Stack.Screen name="Tradicionais" component={MenuScreen} />
+          <Stack.Screen name="Assinaturas" component={MenuScreen} />
         </Stack.Navigator>
       </NavigationContainer>
     </NativeBaseProvider>
