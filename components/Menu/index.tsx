@@ -1,72 +1,104 @@
-import { Flex,Text, Image, HStack } from "native-base";
+import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { Flex,Text, Image, HStack, VStack, IconButton } from "native-base";
+import { TouchableWithoutFeedback } from "react-native";
 
-interface ItemProps {
-  id: number;
-  name: string;
-  logoSrc: string;
-  imageSrc: string;
-  description: string;
-  price: string;
-}
 
-export default function Menu( item : ItemProps ) {
+export default function Menu() {
+
+
+  const navigation: NavigationProp = useNavigation();
 
   return (
-    <>
-      <Flex key={item.id} w="100%" h="15%" flexDir="row" justifyContent="center" alignItems="center">
-        <HStack space="3" alignItems="center">
-          <Image
-            source={{ uri: item.logoSrc }}
-            alt="Quarteirão Logo"
-            h={12}
-            w={12} />
-
-          <Text color="#502314" fontWeight={600} fontSize={20}>{item.name}</Text>
-        </HStack>
-      </Flex>
-      <Flex w="100%" mt={4} h="85%" alignItems="center">
-        <Image
-          source={{ uri: item.imageSrc }}
-          alt="Quarteirao"
-          w="55%"
-          h="50%" />
-        <Text color="#502314" mt={2} fontSize="12" textAlign="center">
-          {item.description}
-        </Text>
-      </Flex>
-    </>
+    <Flex
+      
+      width="100%"
+      height="13%"
+      justifyContent="center"
+      alignItems="center"
+      backgroundColor="#FFFFFF"
+      borderTopColor="#dcdcdc"
+      borderTopWidth={1}
+    >
+      <HStack alignItems="center" h="100%" w="100%">
+      <TouchableWithoutFeedback onPress={() => {
+        navigation.navigate('Home');
+      }}>
+        <VStack w="20%" h="80%" alignItems="center">
+            <Flex>
+                <Image
+                  source={require('../../assets/images/home.png')}
+                  alt="Home"
+                  h="30px"
+                  w="30px"
+                />
+            </Flex>
+            <Text color="caveiras.100">Home</Text>
+        </VStack>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={() => {
+        navigation.navigate('Home');
+      }}> 
+        <VStack w="20%" h="80%" alignItems="center">
+            <Flex>
+              <Image
+                source={require('../../assets/images/hamburguer.png')}
+                alt="Menu"
+                h="30px"
+                w="30px"
+              />
+            </Flex>
+            <Text color="caveiras.100">Menu</Text>
+        </VStack>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => {
+        navigation.navigate('Menu');
+        }}> 
+        <VStack w="20%" h="80%" alignItems="center">
+            <Flex>
+              <Image
+                  source={require('../../assets/images/whatsapp.png')}
+                  alt="Whatsapp"
+                  h="30px"
+                  w="30px"
+              />
+            </Flex>
+            <Text color="caveiras.100">Wapp</Text>
+        </VStack>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => {
+          navigation.navigate('Menu');
+        }}>
+        <VStack w="20%" h="80%" alignItems="center">
+            <Flex>
+              <Image
+                  source={require('../../assets/images/instagram.png')}
+                  alt="Instagram"
+                  h="30px"
+                  w="30px"
+              />
+            </Flex>
+            <Text color="caveiras.100">Insta</Text>
+        </VStack>
+        </TouchableWithoutFeedback>
+        <TouchableWithoutFeedback onPress={() => {
+        navigation.navigate('Menu');
+        }}> 
+        <VStack w="20%" h="80%" alignItems="center">
+            <Flex>
+              <Image
+                  source={require('../../assets/images/story.png')}
+                  alt="Story"
+                  h="30px"
+                  w="30px"
+              />
+            </Flex>
+            <Text color="caveiras.100">Story</Text>
+        </VStack>
+        </TouchableWithoutFeedback>
+      </HStack>
+    </Flex>
   );
 }
 
 
 
-{/* <Flex w="100%" h="50%" backgroundColor="#FFFFFF">
-        <Flex key={item.id} w="100%" h="15%" flexDir="row" justifyContent="center" alignItems="center">
-          <HStack  space="3" alignItems="center">
-            <Image
-              source={{ uri: item.logoSrc }}
-              alt="Quarteirão Logo"
-              h={12}
-              w={12}
-            />
-          
-          <Text color="#502314" fontWeight={600} fontSize={20}>{ item.name }</Text>
-          </HStack>
-          
-        </Flex>
-        <Flex w="100%" mt={4} h="85%"alignItems="center"> 
-              <Image
-                source={{ uri: item.imageSrc }}
-                alt="Quarteirao"
-                w="55%"
-                h="50%"
-                
-              />
-              <Text color="#502314" mt={2} fontSize="12" textAlign="center">
-                {item.description}
-                
-              </Text>
-              
-        
-        </Flex>
-    </Flex> */}

@@ -1,4 +1,5 @@
 import Footer from "../components/Footer";
+import Menu from "../components/Menu";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import { FlatList, Flex, Text, Image, HStack } from "native-base";
@@ -114,7 +115,7 @@ export default function MenuScreen () {
     <>
       <Header />
 
-      <Flex w="100%" alignItems="center" h="60%" bgColor="#FFFFFF">
+      <Flex w="100%" alignItems="center" h="72%" bgColor="#FFFFFF">
         <View style={{ flex: 1, flexGrow: 1, flexDirection: "column" }}>
           {isLoading ? (
             renderLoading()
@@ -135,7 +136,7 @@ export default function MenuScreen () {
           )}
         </View>
       </Flex>
-      <Footer />
+      <Menu/>
     </>
   );
 }

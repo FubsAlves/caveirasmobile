@@ -12,7 +12,7 @@ export default function Category({ navigation }: any) {
         <Flex
           backgroundColor="#FFFFFF"
           width="100%"
-          height="10%"
+          height="12%"
           borderBottomColor="#B71105"
           borderBottomWidth={6}
           justifyContent="center"
@@ -33,7 +33,7 @@ export default function Category({ navigation }: any) {
       <Flex
         backgroundColor="#FFFFFF"
         width="100%"
-        height="10%"
+        height="12%"
         borderBottomColor="#B71105"
         borderBottomWidth={6}
         justifyContent="center"
@@ -55,7 +55,7 @@ export default function Category({ navigation }: any) {
       <Flex
         backgroundColor="#FFFFFF"
         width="100%"
-        height="10%"
+        height="12%"
         borderBottomColor="#B71105"
         borderBottomWidth={6}
         justifyContent="center"
@@ -80,7 +80,7 @@ export default function Category({ navigation }: any) {
       <Flex
         backgroundColor="#FFFFFF"
         width="100%"
-        height="10%"
+        height="12%"
         borderBottomColor="#B71105"
         borderBottomWidth={6}
         justifyContent="center"
@@ -105,7 +105,7 @@ export default function Category({ navigation }: any) {
       <Flex
         backgroundColor="#FFFFFF"
         width="100%"
-        height="10%"
+        height="12%"
         borderBottomColor="#B71105"
         borderBottomWidth={6}
         justifyContent="center"
@@ -120,6 +120,29 @@ export default function Category({ navigation }: any) {
 
           />
 
+        </HStack>
+
+      </Flex>
+      </TouchableWithoutFeedback>
+      <TouchableWithoutFeedback onPress={() => {
+        navigation.navigate('Chickens');
+      }}>
+      <Flex
+        backgroundColor="#FFFFFF"
+        width="100%"
+        height="12%"
+        justifyContent="center"
+      >
+        <HStack justifyContent="space-evenly" alignItems="center">
+          <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Chickens</Text>
+          <Image
+            source={require("../../assets/images/chicken-de-luxo.jpg")}
+            alt="Chickens1s"
+            w="60px"
+            h="60px"
+
+          />
+    
         </HStack>
 
       </Flex>

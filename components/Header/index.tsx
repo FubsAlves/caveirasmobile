@@ -15,7 +15,7 @@ export default function Header() {
     <Flex
     backgroundColor= {route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
     width="100%"
-    height= "20%"
+    height= "15%"
     justifyContent="center"
     alignItems="center"
     safeArea
@@ -38,15 +38,15 @@ export default function Header() {
         <Image 
         source={require('../../assets/images/chickens-logo.webp')}
         alt="Caveiras Logo"
-        h="140px"
-        w="140px"
+        h="100px"
+        w="100px"
         />   
       ) : (
         <Image 
         source={require('../../assets/images/caveiras-logo.png')}
         alt="Caveiras Logo"
-        h="140px"
-        w="140px"
+        h="100px"
+        w="100px"
         /> 
       )}
       
