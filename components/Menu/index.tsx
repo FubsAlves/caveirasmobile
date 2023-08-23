@@ -16,7 +16,7 @@ export default function Menu() {
       justifyContent="center"
       alignItems="center"
       backgroundColor="#FFFFFF"
-      borderTopColor="#dcdcdc"
+      borderTopColor="caveirito.100"
       borderTopWidth={1}
     >
       <HStack alignItems="center" h="100%" w="100%">

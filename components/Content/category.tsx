@@ -22,8 +22,8 @@ export default function Category({ navigation }: any) {
             <Image
               source={require("../../assets/images/melt-bacon.jpg")}
               alt="Lançamentos"
-              w="60px"
-              h="60px" />
+              w="70px"
+              h="70px" />
           </HStack>
         </Flex>
       </TouchableWithoutFeedback>
@@ -43,8 +43,8 @@ export default function Category({ navigation }: any) {
           <Image
             source={require("../../assets/images/esqueleto-rings.jpg")}
             alt="Assinaturas"
-            w="60px"
-            h="60px" />
+            w="70px"
+            h="70px" />
         </HStack>
 
       </Flex>
@@ -65,8 +65,8 @@ export default function Category({ navigation }: any) {
           <Image
             source={require("../../assets/images/quarteirao-caveira.jpg")}
             alt="Tradicionais"
-            w="60px"
-            h="60px"
+            w="70px"
+            h="70px"
 
           />
 
@@ -90,8 +90,8 @@ export default function Category({ navigation }: any) {
           <Image
             source={require("../../assets/images/chicken-de-luxo.jpg")}
             alt="Chickens"
-            w="60px"
-            h="60px"
+            w="70px"
+            h="70px"
 
           />
     
@@ -111,12 +111,12 @@ export default function Category({ navigation }: any) {
         justifyContent="center"
       >
         <HStack justifyContent="space-evenly" alignItems="center">
-          <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Kids</Text>
+          <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Bebidas</Text>
           <Image
-            source={require("../../assets/images/caveiras-kids.webp")}
-            alt="Kids"
-            w="60px"
-            h="60px"
+            source={require("../../assets/images/bebidas.png")}
+            alt="bebidas"
+            w="70px"
+            h="70px"
 
           />
 
@@ -134,12 +134,12 @@ export default function Category({ navigation }: any) {
         justifyContent="center"
       >
         <HStack justifyContent="space-evenly" alignItems="center">
-          <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Chickens</Text>
+          <Text w="50%" fontWeight={600} fontSize="xl" color="#502314" textAlign="center">Porções</Text>
           <Image
-            source={require("../../assets/images/chicken-de-luxo.jpg")}
+            source={require("../../assets/images/caveiras-kids.webp")}
             alt="Chickens1s"
-            w="60px"
-            h="60px"
+            w="70px"
+            h="70px"
 
           />
     
