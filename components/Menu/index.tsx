@@ -1,12 +1,25 @@
 import { NavigationProp, useNavigation } from "@react-navigation/native";
-import { Flex,Text, Image, HStack, VStack, IconButton } from "native-base";
-import { TouchableWithoutFeedback } from "react-native";
+import { Flex, Text, HStack, VStack, IconButton, Image } from "native-base";
+import { Linking, TouchableWithoutFeedback } from "react-native";
+
+import { AntDesign } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'; 
+import { FontAwesome } from '@expo/vector-icons'; 
+
 
 
 export default function Menu() {
 
 
   const navigation: NavigationProp = useNavigation();
+
+  const url = {
+    whatsapp: 'https://api.whatsapp.com/send?phone=5512981473281&text=Boa%20noite!%20Quero%20fazer%20meu%20pedido!',
+    instagram: 'https://www.instagram.com/caveiras.burguer/',
+  }
+  const redirectTo = (link: string) => {
+    Linking.openURL(link);
+  }
 
   return (
     <Flex
@@ -15,84 +28,59 @@ export default function Menu() {
       height="13%"
       justifyContent="center"
       alignItems="center"
-      backgroundColor="#FFFFFF"
-      borderTopColor="caveirito.100"
+      backgroundColor="caveirito.100"
+      borderTopColor="#cdcdcd"
       borderTopWidth={1}
     >
       <HStack alignItems="center" h="100%" w="100%">
       <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Home');
       }}>
-        <VStack w="20%" h="80%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center">
             <Flex>
-                <Image
-                  source={require('../../assets/images/home.png')}
-                  alt="Home"
-                  h="30px"
-                  w="30px"
-                />
+                <IconButton icon={<AntDesign name="home" size={24} color="white" />}/>
             </Flex>
-            <Text color="caveiras.100">Home</Text>
+            <Text color="white">Home</Text>
         </VStack>
       </TouchableWithoutFeedback>
       <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Home');
       }}> 
-        <VStack w="20%" h="80%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center">
             <Flex>
-              <Image
-                source={require('../../assets/images/hamburguer.png')}
-                alt="Menu"
-                h="30px"
-                w="30px"
-              />
+              <IconButton icon={<MaterialIcons name="menu-book" size={24} color="white" />}/>
             </Flex>
-            <Text color="caveiras.100">Menu</Text>
+            <Text color="white">Menu</Text>
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate('Menu');
+          redirectTo(url.whatsapp);
         }}> 
-        <VStack w="20%" h="80%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center">
             <Flex>
-              <Image
-                  source={require('../../assets/images/whatsapp.png')}
-                  alt="Whatsapp"
-                  h="30px"
-                  w="30px"
-              />
+                <IconButton icon={<FontAwesome name="whatsapp" size={24} color="white" />}/>
             </Flex>
-            <Text color="caveiras.100">Wapp</Text>
+            <Text color="white">Wapp</Text>
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
-          navigation.navigate('Menu');
+          redirectTo(url.instagram);
         }}>
-        <VStack w="20%" h="80%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center">
             <Flex>
-              <Image
-                  source={require('../../assets/images/instagram.png')}
-                  alt="Instagram"
-                  h="30px"
-                  w="30px"
-              />
+              <IconButton icon={<AntDesign name="instagram" size={24} color="white" />}/>
             </Flex>
-            <Text color="caveiras.100">Insta</Text>
+            <Text color="white">Insta</Text>
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Menu');
         }}> 
-        <VStack w="20%" h="80%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center">
             <Flex>
-              <Image
-                  source={require('../../assets/images/story.png')}
-                  alt="Story"
-                  h="30px"
-                  w="30px"
-              />
+              <Image source={require("../../assets/images/caveiras-logo.png")} size={8} alt="caveiras-logo" />
             </Flex>
-            <Text color="caveiras.100">Story</Text>
+            <Text color="white">Story</Text>
         </VStack>
         </TouchableWithoutFeedback>
       </HStack>
