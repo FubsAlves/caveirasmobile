@@ -1,4 +1,4 @@
-import { NavigationProp, useNavigation } from "@react-navigation/native";
+import { NavigationProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Flex, Text, HStack, VStack, IconButton, Image } from "native-base";
 import { Linking, TouchableWithoutFeedback } from "react-native";
 
@@ -12,6 +12,7 @@ export default function Menu() {
 
 
   const navigation: NavigationProp = useNavigation();
+  const route = useRoute();
 
   const url = {
     whatsapp: 'https://api.whatsapp.com/send?phone=5512981473281&text=Boa%20noite!%20Quero%20fazer%20meu%20pedido!',
@@ -28,7 +29,7 @@ export default function Menu() {
       height="13%"
       justifyContent="center"
       alignItems="center"
-      backgroundColor="caveirito.100"
+      backgroundColor={route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
       borderTopColor="#cdcdcd"
       borderTopWidth={1}
     >
@@ -36,7 +37,7 @@ export default function Menu() {
       <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Home');
       }}>
-        <VStack w="20%" h="100%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
                 <IconButton icon={<AntDesign name="home" size={24} color="white" />}/>
             </Flex>
@@ -46,7 +47,7 @@ export default function Menu() {
       <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Home');
       }}> 
-        <VStack w="20%" h="100%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
               <IconButton icon={<MaterialIcons name="menu-book" size={24} color="white" />}/>
             </Flex>
@@ -56,7 +57,7 @@ export default function Menu() {
         <TouchableWithoutFeedback onPress={() => {
           redirectTo(url.whatsapp);
         }}> 
-        <VStack w="20%" h="100%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
                 <IconButton icon={<FontAwesome name="whatsapp" size={24} color="white" />}/>
             </Flex>
@@ -66,7 +67,7 @@ export default function Menu() {
         <TouchableWithoutFeedback onPress={() => {
           redirectTo(url.instagram);
         }}>
-        <VStack w="20%" h="100%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
               <IconButton icon={<AntDesign name="instagram" size={24} color="white" />}/>
             </Flex>
@@ -76,9 +77,9 @@ export default function Menu() {
         <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Menu');
         }}> 
-        <VStack w="20%" h="100%" alignItems="center">
+        <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
-              <Image source={require("../../assets/images/caveiras-logo.png")} size={8} alt="caveiras-logo" />
+              <Image source={require("../../assets/images/caveiras-logo.png")} w={10} h={10} alt="caveiras-logo" />
             </Flex>
             <Text color="white">Story</Text>
         </VStack>

@@ -90,10 +90,10 @@ export const itemImages : ItemProps[] = [
     category: "Assinatura"
   },
   {
-    id: 11  ,
+    id: 11,
     name: "Chicken Spicy",
     logoSrc: "https://i.imgur.com/2puiK3w.jpg",
-    imageSrc: "https://i.imgur.com/xEmdavg.jpg",
+    imageSrc: "https://i.imgur.com/IYqTFHw.jpg",
     description: "Pão de gergelim, hambúrguer de frango empanado, alface americana e maionese.",
     price: "35.00",
     category: "Frango",
@@ -102,7 +102,7 @@ export const itemImages : ItemProps[] = [
     id: 4,
     name: "CB Chicken",
     logoSrc: "https://i.imgur.com/VF8nQNp.png",
-    imageSrc: "https://i.imgur.com/vp3p4Dd.jpg",
+    imageSrc: "https://i.imgur.com/eS5LNoa.jpg",
     description: "Pão de gergelim, hambúrguer de frango empanado, alface americana e maionese.",
     price: "23.99",
     category: "Frango",
