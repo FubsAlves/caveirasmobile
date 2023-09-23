@@ -1,9 +1,6 @@
 import { NavigationProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Flex, Text, HStack, VStack, IconButton, Image } from "native-base";
 import { Linking, TouchableWithoutFeedback } from "react-native";
-
-import { AntDesign } from '@expo/vector-icons'; 
-import { MaterialIcons } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
 
 
@@ -39,7 +36,7 @@ export default function Menu() {
       }}>
         <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
-                <IconButton icon={<AntDesign name="home" size={24} color="white" />}/>
+              <Image source={require("../../assets/images/home.png")} w={8} h={8} alt="home-logo" />
             </Flex>
             <Text color="white">Home</Text>
         </VStack>
@@ -49,7 +46,7 @@ export default function Menu() {
       }}> 
         <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
-              <IconButton icon={<MaterialIcons name="menu-book" size={24} color="white" />}/>
+            <Image source={require("../../assets/images/menu.png")} w={8} h={8} alt="menu-logo" />
             </Flex>
             <Text color="white">Menu</Text>
         </VStack>
@@ -59,7 +56,7 @@ export default function Menu() {
         }}> 
         <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
-                <IconButton icon={<FontAwesome name="whatsapp" size={24} color="white" />}/>
+              <Image source={require("../../assets/images/whatsapp.png")} w={8} h={8} alt="whatsapp-logo" />
             </Flex>
             <Text color="white">Wapp</Text>
         </VStack>
@@ -69,7 +66,7 @@ export default function Menu() {
         }}>
         <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
-              <IconButton icon={<AntDesign name="instagram" size={24} color="white" />}/>
+              <Image source={require("../../assets/images/instagram.png")} w={8} h={8} alt="instagram-logo" />
             </Flex>
             <Text color="white">Insta</Text>
         </VStack>
@@ -79,7 +76,7 @@ export default function Menu() {
         }}> 
         <VStack w="20%" h="100%" alignItems="center" justifyContent="center">
             <Flex>
-              <Image source={require("../../assets/images/caveiras-logo.png")} w={10} h={10} alt="caveiras-logo" />
+              <Image source={require("../../assets/images/caveiras-logo.png")} w={8} h={8} alt="caveiras-logo" />
             </Flex>
             <Text color="white">Story</Text>
         </VStack>

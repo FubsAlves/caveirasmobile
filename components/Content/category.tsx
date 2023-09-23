@@ -14,7 +14,7 @@ export default function Category({ navigation }: any) {
           width="100%"
           height="12%"
           borderBottomColor="#B71105"
-          borderBottomWidth={6}
+          borderBottomWidth={3}
           justifyContent="center"
         >
           <HStack justifyContent="space-evenly" alignItems="center">
@@ -35,7 +35,7 @@ export default function Category({ navigation }: any) {
         width="100%"
         height="12%"
         borderBottomColor="#B71105"
-        borderBottomWidth={6}
+        borderBottomWidth={3}
         justifyContent="center"
       >
         <HStack justifyContent="space-evenly" alignItems="center">
@@ -57,7 +57,7 @@ export default function Category({ navigation }: any) {
         width="100%"
         height="12%"
         borderBottomColor="#B71105"
-        borderBottomWidth={6}
+        borderBottomWidth={3}
         justifyContent="center"
       >
         <HStack justifyContent="space-evenly" alignItems="center">
@@ -82,7 +82,7 @@ export default function Category({ navigation }: any) {
         width="100%"
         height="12%"
         borderBottomColor="#B71105"
-        borderBottomWidth={6}
+        borderBottomWidth={3}
         justifyContent="center"
       >
         <HStack justifyContent="space-evenly" alignItems="center">
@@ -107,7 +107,7 @@ export default function Category({ navigation }: any) {
         width="100%"
         height="12%"
         borderBottomColor="#B71105"
-        borderBottomWidth={6}
+        borderBottomWidth={3}
         justifyContent="center"
       >
         <HStack justifyContent="space-evenly" alignItems="center">
