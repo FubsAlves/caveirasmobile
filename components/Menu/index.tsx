@@ -23,7 +23,7 @@ export default function Menu() {
       height="13%"
 
       
-      backgroundColor={route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
+      backgroundColor={route.name === "Chickens" ? 'chickens.100' : 'secret.100'}
       borderTopColor="#cdcdcd"
       borderTopWidth={1}
     >
@@ -39,7 +39,7 @@ export default function Menu() {
             
         </VStack>
       </TouchableWithoutFeedback>
-      <TouchableWithoutFeedback onPress={() => {
+      <TouchableWithoutFeedback delayLongPress={1000} onLongPress={() => {alert("ALOU")}} onPress={() => {
         navigation.navigate('Home');
       }}> 
         <VStack w="20%" h="100%" alignItems="center">

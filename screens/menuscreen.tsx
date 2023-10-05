@@ -62,7 +62,7 @@ export default function MenuScreen () {
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
       <Flex w={Dimensions.get('window').width} alignItems="center" justifyContent="center" h="100%">
-        <HStack space={4}  mt={2} alignItems="center">
+      <HStack space={4}  mt={2} alignItems="center">
           {item.logoSrc &&
             <Image
               source={{
@@ -74,9 +74,6 @@ export default function MenuScreen () {
             />
             }
 
-          <Text color="#502314" fontWeight={600} fontSize={20}>
-            {item.name}
-          </Text>
           {item.secondaryLogoSrc &&
           
           <Image
@@ -90,6 +87,9 @@ export default function MenuScreen () {
           
           }
         </HStack>
+        <Text color="#502314" fontWeight={600} fontSize={20}>
+            {item.name}
+          </Text>
         <Flex mt={4}>
               <Image
                 onLoadEnd={handleImageLoad}

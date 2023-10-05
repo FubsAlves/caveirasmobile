@@ -11,6 +11,7 @@ import MenuScreen from "./screens/menuscreen";
 import { THEME } from './THEME';
 
 import client from './services/client';
+import NewsScreen from "./screens/newsscreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -56,6 +57,7 @@ export default function App() {
         <NavigationContainer>
           <View onLayout={onLayoutRootView} />
           <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+            <Stack.Screen name="News" component={NewsScreen} />
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Menu" component={MenuScreen} />
             <Stack.Screen name="Chickens" component={MenuScreen} />

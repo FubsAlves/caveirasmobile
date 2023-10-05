@@ -47,6 +47,9 @@ export const THEME = extendTheme({
     },
     caveirito: {
       100: "#B71105",
+    },
+    secret: {
+      100: "#E5E4E2",
     }
   },
   
