@@ -13,7 +13,7 @@ export default function Header() {
   
   return (
     <Flex
-    backgroundColor= {route.name === "Chickens" ? 'chickens.100' : 'secret.100'}
+    backgroundColor= {route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
     width="100%"
     height= "15%"
     justifyContent="center"

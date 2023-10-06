@@ -56,7 +56,7 @@ export default function App() {
       <NativeBaseProvider theme={THEME}>
         <NavigationContainer>
           <View onLayout={onLayoutRootView} />
-          <Stack.Navigator initialRouteName="Home" screenOptions={{ headerShown: false }}>
+          <Stack.Navigator initialRouteName="News" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="News" component={NewsScreen} />
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Menu" component={MenuScreen} />

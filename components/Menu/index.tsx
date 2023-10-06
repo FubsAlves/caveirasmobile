@@ -23,7 +23,7 @@ export default function Menu() {
       height="13%"
 
       
-      backgroundColor={route.name === "Chickens" ? 'chickens.100' : 'secret.100'}
+      backgroundColor={route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
       borderTopColor="#cdcdcd"
       borderTopWidth={1}
     >
