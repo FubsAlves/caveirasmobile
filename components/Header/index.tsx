@@ -15,7 +15,7 @@ export default function Header() {
     <Flex
     backgroundColor= {route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
     width="100%"
-    height= "15%"
+    height= "18%"
     justifyContent="center"
     alignItems="center"
     safeArea

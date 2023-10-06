@@ -1,12 +1,22 @@
 import { NavigationProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Flex, Text, HStack, VStack, IconButton, Image } from "native-base";
 import { Linking, TouchableWithoutFeedback } from "react-native";
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { useEffect, useState } from "react";
+
+
 
 export default function Menu() {
 
 
   const navigation: NavigationProp = useNavigation();
-  const route = useRoute();
+  const {name: routeName} = useRoute();
+  const [menuColor, setMenuColor] = useState({
+    background: "#FFFFFF",
+    text: "#B71105",
+  })
+  
 
   const url = {
     whatsapp: 'https://api.whatsapp.com/send?phone=5512981473281&text=Boa%20noite!%20Quero%20fazer%20meu%20pedido!',
@@ -16,36 +26,51 @@ export default function Menu() {
     Linking.openURL(link);
   }
 
+  useEffect(() => {
+    switch (routeName) {
+      case 'Chickens':
+        setMenuColor({background: "chickens.100", text: "#FFFFFF"})
+        break;
+      case 'News':
+        setMenuColor({background: "#FFFFFF", text: "#B71105"})
+        break;
+      default:
+        setMenuColor({background: "#B71105", text: "#FFFFFF"}) 
+        break;
+    }
+  }, [routeName])
+
   return (
+    
     <Flex
       
       width="100%"
-      height="13%"
-
-      
-      backgroundColor={route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
+      height="10%"
+      backgroundColor={menuColor.background}
       borderTopColor="#cdcdcd"
       borderTopWidth={1}
+      
+    
+      
     >
+    
       <HStack h="100%" w="100%">
-      <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate('Home');
-      }}>
+  
         <VStack w="20%" h="100%" alignItems="center">
-            <Text color="white">Home</Text>
-            <Flex mt={1}>
-              <Image source={require("../../assets/images/home.png")} w={8} h={8} alt="home-logo" />
+            <Text color={menuColor.text}>Home</Text>
+            <Flex>
+              <IconButton onPress={() => {navigation.navigate("News")}} padding="0" icon={<Ionicons name="home" size={32} color={menuColor.text} /> }/>
             </Flex>
             
         </VStack>
-      </TouchableWithoutFeedback>
+
       <TouchableWithoutFeedback delayLongPress={1000} onLongPress={() => {alert("ALOU")}} onPress={() => {
         navigation.navigate('Home');
       }}> 
         <VStack w="20%" h="100%" alignItems="center">
-            <Text color="white">Menu</Text>
+            <Text color={menuColor.text}>Menu</Text>
             <Flex mt={1}>
-              <Image source={require("../../assets/images/menu.png")} w={8} h={8} alt="menu-logo" />
+              <IconButton padding="0" icon={<MaterialCommunityIcons name="french-fries" size={32} color={menuColor.text} />}/>
             </Flex>
             
         </VStack>
@@ -54,9 +79,9 @@ export default function Menu() {
           redirectTo(url.whatsapp);
         }}> 
         <VStack w="20%" h="100%" alignItems="center">
-            <Text color="white">Wapp</Text>
+            <Text color={menuColor.text}>Wapp</Text>
             <Flex mt={1}>
-              <Image source={require("../../assets/images/whatsapp.png")} w={8} h={8} alt="whatsapp-logo" />
+              <IconButton padding={0} icon={<Ionicons name="logo-whatsapp" size={32} color={menuColor.text} />}/>
             </Flex>
             
         </VStack>
@@ -65,9 +90,9 @@ export default function Menu() {
           redirectTo(url.instagram);
         }}>
         <VStack w="20%" h="100%" alignItems="center">
-            <Text color="white">Insta</Text>
+            <Text color={menuColor.text}>Insta</Text>
             <Flex mt={1}>
-              <Image source={require("../../assets/images/instagram.png")} w={8} h={8} alt="instagram-logo" />
+              <IconButton padding={0} icon={<Ionicons name="logo-instagram" size={32} color={menuColor.text} />}/>
             </Flex>
             
         </VStack>
@@ -76,7 +101,7 @@ export default function Menu() {
         navigation.navigate('Menu');
         }}> 
         <VStack space={0} w="20%" h="100%" alignItems="center">
-            <Text color="white">Story</Text>
+            <Text color={menuColor.text}>Story</Text>
             <Flex>
               <Image source={require("../../assets/images/red-logo.png")} w={12} h={12} alt="caveiras-logo" />
             </Flex>
