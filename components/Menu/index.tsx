@@ -48,8 +48,8 @@ export default function Menu() {
       height="10%"
       backgroundColor={menuColor.background}
       borderTopColor="#cdcdcd"
-      borderTopWidth={1}
-      
+      borderTopWidth={"2"}
+      shadow={"6"}
     
       
     >
