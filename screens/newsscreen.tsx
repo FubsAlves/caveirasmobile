@@ -7,7 +7,7 @@ export default function NewsScreen () {
         <>
         <StatusBar hidden />
             <Flex w="100%" h="90%" backgroundColor="caveirito.100" justifyContent="center" alignItems="center">
-                <Flex shadow="3" borderRadius="3xl" borderBottomRadius="none" w="90%" h="95%" backgroundColor="#FFFFFF">
+                <Flex shadow="3" borderRadius="3xl" borderBottomRadius="none" w="95%" h="95%" backgroundColor="#FFFFFF">
                     <Image
                         source={require('../assets/images/caveiras-logo.png')}
                         alt="Caveiras Logo"
@@ -17,7 +17,7 @@ export default function NewsScreen () {
                     <Divider bgColor="caveirito.100" />
                     <ScrollView>
                         <Flex w="100%">
-                            <Image source={require('../assets/images/news/news3.png')} alt="news" />
+                            <Image source={require('../assets/images/news/news3.png')} w="100%" alt="news" />
                         </Flex>
                         <HStack alignSelf="center">
                             <Text color="secrets.100" fontSize="2xl">●</Text>
@@ -30,7 +30,7 @@ export default function NewsScreen () {
                         </Flex>
 
                         <Flex w="100%">
-                            <Image source={require('../assets/images/news/news9.png')} alt="news" />
+                            <Image source={require('../assets/images/news/news9.png')} w="100%" h="64" alt="news" />
                         </Flex>
 
                     </ScrollView>
