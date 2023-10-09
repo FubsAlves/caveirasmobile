@@ -13,7 +13,7 @@ export default function Menu() {
   const navigation: NavigationProp = useNavigation();
   const {name: routeName} = useRoute();
   const [menuColor, setMenuColor] = useState({
-    background: "#f7f7f7",
+    footer: "#B71105",
     text: "#3e3e3e",
   })
   
@@ -26,6 +26,18 @@ export default function Menu() {
     Linking.openURL(link);
   }
 
+  useEffect(() => {
+    switch (routeName) {
+      case 'Chickens':
+        setMenuColor({footer: "#f07100", text: "#3e3e3e"})
+        break;
+    
+      default:
+        setMenuColor({footer: "#B71105", text: "#3e3e3e"})
+        break;
+    }
+  }, [routeName]);
+
 
   return (
     
@@ -33,7 +45,7 @@ export default function Menu() {
       
       width="100%"
       height="10%"
-      backgroundColor={menuColor.background}
+      backgroundColor="#f7f7f7"
       shadow={8}
       borderTopRadius="md"
     >
@@ -87,7 +99,7 @@ export default function Menu() {
         </VStack>
         </TouchableWithoutFeedback>
       </HStack>
-      <Flex w="100%" h="20%" borderTopWidth="2" borderTopColor="#E91606" backgroundColor="#B71105"></Flex>
+      <Flex w="100%" h="20%" shadow="6" backgroundColor={menuColor.footer}></Flex>
     </Flex>
   );
 }
