@@ -2,12 +2,15 @@ import { Flex, Text, Image } from "native-base";
 import { TouchableWithoutFeedback } from "react-native";
 
 
-export default function CategoryCard({category, price}: any) {
+export default function CategoryCard({category, imageUrl, navigation}: any) {
+
+    
+
 
   return (
     <>
         <TouchableWithoutFeedback onPress={() => {
-        
+            navigation.navigate(category);
         }}>
             <Flex w="48%" h="30%" bg={{
                 linearGradient: {
@@ -17,12 +20,11 @@ export default function CategoryCard({category, price}: any) {
                 }
             }}
             borderRadius="2xl"
-            shadow={6}
             alignItems="center"
             my={2}
             >
                 <Image
-                    source={require("../../assets/images/chicken-de-luxo.png")}
+                    source={{uri: imageUrl}}
                     alt="Chickens"
                     w="120px"
                     h="100px"

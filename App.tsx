@@ -60,10 +60,12 @@ export default function App() {
           <Stack.Navigator initialRouteName="News" screenOptions={{ headerShown: false }}>
             <Stack.Screen name="News" component={NewsScreen} />
             <Stack.Screen name="Home" component={HomeScreen} />
-            <Stack.Screen name="Menu" component={MenuScreen} />
+            <Stack.Screen name="Lançamentos" component={MenuScreen} />
             <Stack.Screen name="Chickens" component={MenuScreen} />
             <Stack.Screen name="Tradicionais" component={MenuScreen} />
             <Stack.Screen name="Assinaturas" component={MenuScreen} />
+            <Stack.Screen name="Bebidas" component={MenuScreen} />
+            <Stack.Screen name="Porções" component={MenuScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </NativeBaseProvider>
