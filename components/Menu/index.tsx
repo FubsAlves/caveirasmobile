@@ -50,7 +50,7 @@ export default function Menu() {
       borderTopRadius="md"
     >
     
-      <HStack h="80%" w="100%">
+      <HStack h="80%" w="100%" flex="1" alignItems="flex-end">
   
         <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
