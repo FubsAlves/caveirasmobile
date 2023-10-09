@@ -13,8 +13,8 @@ export default function Menu() {
   const navigation: NavigationProp = useNavigation();
   const {name: routeName} = useRoute();
   const [menuColor, setMenuColor] = useState({
-    background: "#FFFFFF",
-    text: "#B71105",
+    background: "#f7f7f7",
+    text: "#3e3e3e",
   })
   
 
@@ -26,19 +26,6 @@ export default function Menu() {
     Linking.openURL(link);
   }
 
-  useEffect(() => {
-    switch (routeName) {
-      case 'Chickens':
-        setMenuColor({background: "chickens.100", text: "#FFFFFF"})
-        break;
-      case 'News':
-        setMenuColor({background: "#FFFFFF", text: "#B71105"})
-        break;
-      default:
-        setMenuColor({background: "#B71105", text: "#FFFFFF"}) 
-        break;
-    }
-  }, [routeName])
 
   return (
     
@@ -47,65 +34,60 @@ export default function Menu() {
       width="100%"
       height="10%"
       backgroundColor={menuColor.background}
-      shadow={"6"}
-    
-      
+      shadow={8}
+      borderTopRadius="md"
     >
     
-      <HStack h="100%" w="100%">
+      <HStack h="80%" w="100%">
   
-        <VStack w="20%" h="100%" alignItems="center">
-            <Text color={menuColor.text}>Home</Text>
-            <Flex>
-              <IconButton onPress={() => {navigation.navigate("News")}} padding="0" icon={<Ionicons name="home" size={32} color={menuColor.text} /> }/>
+        <VStack w="20%" h="90%" alignItems="center">
+            <Flex mt={1}>
+              <IconButton onPress={() => {navigation.navigate("News")}} padding={0} icon={<Ionicons name="home" size={28} color={menuColor.text} /> }/>
             </Flex>
-            
+            <Text color={menuColor.text} fontWeight="400.normal" fontSize="2xs">Home</Text>
         </VStack>
-
       <TouchableWithoutFeedback delayLongPress={1000} onLongPress={() => {alert("ALOU")}} onPress={() => {
         navigation.navigate('Home');
       }}> 
-        <VStack w="20%" h="100%" alignItems="center">
-            <Text color={menuColor.text}>Menu</Text>
+        <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton padding="0" icon={<MaterialCommunityIcons name="french-fries" size={32} color={menuColor.text} />}/>
+              <IconButton padding="0" icon={<MaterialCommunityIcons name="french-fries" size={28} color="#E91606" />}/>
             </Flex>
-            
+            <Text color="#E91606" fontWeight="300.bold" fontSize="2xs">Menu</Text>
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
           redirectTo(url.whatsapp);
         }}> 
-        <VStack w="20%" h="100%" alignItems="center">
-            <Text color={menuColor.text}>Wapp</Text>
+        <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton padding={0} icon={<Ionicons name="logo-whatsapp" size={32} color={menuColor.text} />}/>
+              <IconButton padding={0} icon={<Ionicons name="logo-whatsapp" size={28} color={menuColor.text} />}/>
             </Flex>
-            
+            <Text color={menuColor.text} fontWeight="400.normal" fontSize="2xs">Wapp</Text>
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
           redirectTo(url.instagram);
         }}>
-        <VStack w="20%" h="100%" alignItems="center">
-            <Text color={menuColor.text}>Insta</Text>
+        <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton padding={0} icon={<Ionicons name="logo-instagram" size={32} color={menuColor.text} />}/>
+              <IconButton padding={0} icon={<Ionicons name="logo-instagram" size={28} color={menuColor.text} />}/>
             </Flex>
-            
+            <Text color={menuColor.text} fontWeight="400.normal" fontSize="2xs">Insta</Text>
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Menu');
         }}> 
-        <VStack space={0} w="20%" h="100%" alignItems="center">
-            <Text color={menuColor.text}>Story</Text>
+        <VStack space={0} w="20%" h="90%"alignItems="center">
             <Flex>
-              <Image source={require("../../assets/images/red-logo.png")} w={12} h={12} alt="caveiras-logo" />
+              <Image source={require("../../assets/images/caveiras-logo.png")} w={9} h={9} alt="caveiras-logo" />
             </Flex>
+            <Text color={menuColor.text} fontWeight="400.normal" fontSize="2xs">Story</Text>
         </VStack>
         </TouchableWithoutFeedback>
       </HStack>
+      <Flex w="100%" h="20%" borderTopWidth="2" borderTopColor="#E91606" backgroundColor="#B71105"></Flex>
     </Flex>
   );
 }
