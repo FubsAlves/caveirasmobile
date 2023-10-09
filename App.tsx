@@ -12,6 +12,7 @@ import { THEME } from './THEME';
 
 import client from './services/client';
 import NewsScreen from "./screens/newsscreen";
+import { CONFIG } from "./CONFIG";
 
 const Stack = createNativeStackNavigator();
 
@@ -53,7 +54,7 @@ export default function App() {
 
   return (
     <ApolloProvider client={client}>
-      <NativeBaseProvider theme={THEME}>
+      <NativeBaseProvider theme={THEME} config={CONFIG}>
         <NavigationContainer>
           <View onLayout={onLayoutRootView} />
           <Stack.Navigator initialRouteName="News" screenOptions={{ headerShown: false }}>
