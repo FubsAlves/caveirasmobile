@@ -4,7 +4,7 @@ const GET_CATEGORIES = gql`
     query getCategories {
         categories {
             id
-            category
+            name
             snackImage {
                 url
             }

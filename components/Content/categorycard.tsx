@@ -2,17 +2,14 @@ import { Flex, Text, Image } from "native-base";
 import { TouchableWithoutFeedback } from "react-native";
 
 
-export default function CategoryCard({category, imageUrl, navigation}: any) {
+export default function CategoryCard({name, snackImage, navigation}: any) {
 
     
 
 
   return (
     <>
-        <TouchableWithoutFeedback onPress={() => {
-            navigation.navigate(category);
-        }}>
-            <Flex w="48%" h="30%" bg={{
+            <Flex w="48%" h="33%" bg={{
                 linearGradient: {
                     colors: ["caveirito.100", "#FFFFFF"],
                     locations: [0.5, 0.5]
@@ -24,7 +21,7 @@ export default function CategoryCard({category, imageUrl, navigation}: any) {
             my={2}
             >
                 <Image
-                    source={{uri: imageUrl}}
+                    source={{uri: snackImage}}
                     alt="Chickens"
                     w="120px"
                     h="100px"
@@ -32,10 +29,8 @@ export default function CategoryCard({category, imageUrl, navigation}: any) {
                     
                 />
             
-            <Text fontWeight={600} marginTop="auto" marginBottom="1/6" fontSize="lg" color="#502314">{category}</Text>  
+            <Text fontWeight={600} marginTop="auto" fontSize="lg" color="#502314">{name}</Text>  
             </Flex>
-        </TouchableWithoutFeedback>
-        
     </>
   )
 }

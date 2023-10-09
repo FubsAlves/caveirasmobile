@@ -9,22 +9,15 @@ export default function Content( {navigation} : any ) {
   const {loading, error, data} = useQuery(GET_CATEGORIES);
   
 
-  const testCategories = () => {
-    console.log(data.categories[0]);
-  }
-
   return (
     
     <ScrollView>
-      <Flex w="100%" h="72%" flexDirection="row" alignItems="center" justifyContent="space-evenly" flexWrap="wrap">
-        {data.categories.map((category: any) => {
-          <CategoryCard navigation={navigation} category={category.name} imageUrl={category.snackImage.url}/>
-        })}
-        
+      <Flex w="100%" h="100%" flexDirection="row" alignItems="flex-end" justifyContent="space-evenly" flexWrap="wrap">
+        {console.log(data)}
+        {/* <CategoryCard navigation={navigation} name={data.categories[0].name} imageUrl={data.categories[0].snackImage.url}/>
+        <CategoryCard navigation={navigation} name={data.categories[0].name} imageUrl={data.categories[0].snackImage.url}/>
+        <CategoryCard navigation={navigation} name={data.categories[0].name} imageUrl={data.categories[0].snackImage.url}/> */}
       </Flex>
-      <Button onPress={() => {
-        testCategories();
-      }}></Button>
     </ScrollView>
   )
 }
