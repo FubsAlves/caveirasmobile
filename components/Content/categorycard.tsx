@@ -9,7 +9,7 @@ export default function CategoryCard({name, imageUrl, navigation}: any) {
 
   return (
     <>
-            <Flex w="48%" h="33%" bg={{
+            <Flex w="48%" h="130px" bg={{
                 linearGradient: {
                     colors: ["caveirito.100", "#FFFFFF"],
                     locations: [0.5, 0.5]
