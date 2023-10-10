@@ -22,7 +22,7 @@ export default function Content( {navigation} : any ) {
             
             {data.categories.map((category) => {
               return (
-                <CategoryCard navigation={navigation} name={category.name} imageUrl={category.snackImage.url}/>
+                <CategoryCard navigation={navigation} key={category.id} name={category.name} imageUrl={category.snackImage.url}/>
               )
             })}
             

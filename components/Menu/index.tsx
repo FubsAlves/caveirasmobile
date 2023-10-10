@@ -2,7 +2,7 @@ import { NavigationProp, useNavigation, useRoute } from "@react-navigation/nativ
 import { Flex, Text, HStack, VStack, IconButton, Image } from "native-base";
 import { Linking, TouchableWithoutFeedback } from "react-native";
 import { Ionicons } from '@expo/vector-icons';
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import { MaterialIcons } from '@expo/vector-icons'; 
 import { useEffect, useState } from "react";
 
 
@@ -15,6 +15,7 @@ export default function Menu() {
   const [menuColor, setMenuColor] = useState({
     footer: "#B71105",
     text: "#3e3e3e",
+    activate: "#E91606",
   })
   
 
@@ -29,11 +30,10 @@ export default function Menu() {
   useEffect(() => {
     switch (routeName) {
       case 'Chickens':
-        setMenuColor({footer: "#f07100", text: "#3e3e3e"})
+        setMenuColor({footer: "#f07100", text: "#3e3e3e", activate: "#FF8B24"})
         break;
-    
       default:
-        setMenuColor({footer: "#B71105", text: "#3e3e3e"})
+        setMenuColor({footer: "#B71105", text: "#3e3e3e", activate: "#E91606"})
         break;
     }
   }, [routeName]);
@@ -49,23 +49,22 @@ export default function Menu() {
       shadow={8}
       borderTopRadius="md"
     >
-    
       <HStack h="80%" w="100%" flex="1" alignItems="flex-end">
   
         <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton onPress={() => {navigation.navigate("News")}} padding={0} icon={<Ionicons name="home" size={28} color={menuColor.text} /> }/>
+              <IconButton onPress={() => {navigation.navigate("News")}} padding={0} icon={<Ionicons name="home" size={28} color={routeName === "News" ? menuColor.activate : menuColor.text} /> }/>
             </Flex>
-            <Text color={menuColor.text} fontWeight="400.normal" fontSize="2xs">Home</Text>
+            <Text color={routeName === "News" ? menuColor.activate : menuColor.text} fontWeight="400.normal" fontSize="2xs">Home</Text>
         </VStack>
-      <TouchableWithoutFeedback delayLongPress={1000} onLongPress={() => {alert("ALOU")}} onPress={() => {
+      <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Home');
       }}> 
         <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton padding="0" icon={<MaterialCommunityIcons name="french-fries" size={28} color="#E91606" />}/>
+              <IconButton padding="0" icon={<MaterialIcons name="restaurant-menu" size={28} color={routeName !== "News" ? menuColor.activate : menuColor.text} />}/>
             </Flex>
-            <Text color="#E91606" fontWeight="300.bold" fontSize="2xs">Menu</Text>
+            <Text color={routeName !== "News" ? menuColor.activate : menuColor.text} fontWeight="300.bold" fontSize="2xs">Menu</Text>
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {

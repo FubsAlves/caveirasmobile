@@ -20,7 +20,6 @@ export default function Header() {
     alignItems="center"
     safeArea
   >  
-
       {route.name !== "Home" ? (
         <IconButton
         position="absolute"
