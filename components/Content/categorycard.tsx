@@ -2,7 +2,7 @@ import { Flex, Text, Image } from "native-base";
 import { TouchableWithoutFeedback } from "react-native";
 
 
-export default function CategoryCard({name, snackImage, navigation}: any) {
+export default function CategoryCard({name, imageUrl, navigation}: any) {
 
     
 
@@ -21,7 +21,7 @@ export default function CategoryCard({name, snackImage, navigation}: any) {
             my={2}
             >
                 <Image
-                    source={{uri: snackImage}}
+                    source={{uri: imageUrl}}
                     alt="Chickens"
                     w="120px"
                     h="100px"

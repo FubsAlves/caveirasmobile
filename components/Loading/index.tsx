@@ -25,7 +25,7 @@ export default function Loading() {
       )}
       
      
-      <Flex flexDir="row">
+      <Flex flexDir="row" justifyContent="center">
         <Spinner color={route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'} size="lg" mr={2}/>
         <Heading color={route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}>Carregando...</Heading>
       </Flex>    
