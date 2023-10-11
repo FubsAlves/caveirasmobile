@@ -94,7 +94,7 @@ export default function MenuScreen () {
         </HStack>
         <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
-          </Text>
+        </Text>
         <Flex mt={4}>
               <Image
                 onLoadEnd={handleImageLoad}

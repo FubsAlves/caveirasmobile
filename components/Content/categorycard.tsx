@@ -31,8 +31,8 @@ export default function CategoryCard({name, imageUrl, navigation}: any) {
           <Image
             source={{uri: imageUrl}}
             alt={name}
-            w="80%"
-            h="75%"
+            w="75%"
+            h="70%"
             marginTop="auto"
           />
 
