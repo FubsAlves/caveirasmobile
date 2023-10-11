@@ -31,6 +31,11 @@ export default function MenuScreen () {
   /* const [items, setItems] = useState<ItemProps[]>(itemImages); */
   const [isLoading, setIsLoading] = useState(true);
   const {loading, error, data} = useQuery(GET_SNACKS);
+
+  const dimensions = {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
+  }
   
 
   useEffect(() => {
@@ -94,8 +99,8 @@ export default function MenuScreen () {
               <Image
                 onLoadEnd={handleImageLoad}
                 style={{
-                  width: 200,
-                  height: 200,
+                  width: dimensions.width * 0.75,
+                  height: dimensions.height * 0.35,
                 }}
                 source={{
                   uri: item.imageSrc.url,
