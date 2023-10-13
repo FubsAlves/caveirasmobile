@@ -1,4 +1,3 @@
-import Footer from "../components/Footer";
 import Menu from "../components/Menu";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
