@@ -13,6 +13,7 @@ import { THEME } from './THEME';
 import client from './services/client';
 import NewsScreen from "./screens/newsscreen";
 import { CONFIG } from "./CONFIG";
+import CarouselScreen from "./screens/carouselscreen";
 
 const Stack = createNativeStackNavigator();
 
@@ -66,6 +67,7 @@ export default function App() {
             <Stack.Screen name="Assinaturas" component={MenuScreen} />
             <Stack.Screen name="Bebidas" component={MenuScreen} />
             <Stack.Screen name="Porções" component={MenuScreen} />
+            <Stack.Screen name="Carousel" component={CarouselScreen} />
           </Stack.Navigator>
         </NavigationContainer>
       </NativeBaseProvider>
