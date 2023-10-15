@@ -9,9 +9,8 @@
     "orientation": "portrait",
     "icon": "./assets/images/caveiras-logo.png",
     "splash": {
-      "image": "./assets/images/caveiras-logo.png",
+      "image": "./assets/splash.png",
       "backgroundColor": "#B71105"
-      
     },
     "updates": {
       "fallbackToCacheTimeout": 0

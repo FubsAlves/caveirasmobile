@@ -86,7 +86,7 @@ export default function Menu() {
         </VStack>
         </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate('Menu');
+        navigation.navigate('News');
         }}> 
         <VStack space={0} w="20%" h="90%"alignItems="center">
             <Flex>
