@@ -44,7 +44,6 @@ export default function CarouselNews() {
                         h="100%"
                         key={item.id}   
                     >
-                        {console.log(item)}
                         <Image w="100%" h="100%" source={{uri: item.image.url}} resizeMode="stretch" alt="news"/>
                     </Flex>
                 )}
