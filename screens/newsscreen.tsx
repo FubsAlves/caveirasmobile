@@ -19,12 +19,6 @@ export default function NewsScreen () {
                         <Flex w="100%">
                             <Image source={require('../assets/images/news/news3.png')} w="100%" alt="news" />
                         </Flex>
-                        <HStack alignSelf="center">
-                            <Text color="secrets.100" fontSize="2xl">●</Text>
-                            <Text color="secrets.100" fontSize="2xl">●</Text>
-                            <Text color="secrets.100" fontSize="2xl">●</Text>
-                            <Text color="secrets.100" fontSize="2xl">●</Text>
-                        </HStack>
                         <Flex w="100%" mb={5}>
                             <Image source={require('../assets/images/news/newschicken.jpg')} w="100%" h="210px" alt="news" />
                         </Flex>

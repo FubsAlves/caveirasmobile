@@ -1,6 +1,6 @@
 import { Flex, Text, Image } from "native-base";
 import { TouchableWithoutFeedback, Dimensions } from "react-native";
-
+import Animated, { FadeIn, FadeOut } from 'react-native-reanimated';
 
 export default function CategoryCard({name, imageUrl, navigation}: any) {
 
@@ -16,29 +16,31 @@ export default function CategoryCard({name, imageUrl, navigation}: any) {
       <TouchableWithoutFeedback onPress={() => {
         navigation.navigate(name);
       }}>
-        <Flex w={dimensions.width * 0.48} h={dimensions.height * 0.21} 
-          bg={{
-            linearGradient: {
-              colors: ["caveirito.100", "#FFFFFF"],
-              locations: [0.5, 0.5]
-            }
-          }}
+  
 
-          borderRadius="2xl"
-          alignItems="center"
-          my={2}
-        > 
-          <Image
-            source={{uri: imageUrl}}
-            alt={name}
-            w="75%"
-            h="70%"
-            marginTop="auto"
-          />
+          <Flex w={dimensions.width * 0.48} h={dimensions.height * 0.21} 
+            bg={{
+              linearGradient: {
+                colors: ["caveirito.100", "#FFFFFF"],
+                locations: [0.5, 0.5]
+              }
+            }}
 
-          <Text fontWeight={600} marginTop="auto" fontSize="lg" color="#502314">{name}</Text>  
+            borderRadius="2xl"
+            alignItems="center"
+            my={2}
+          > 
+            <Image
+              source={{uri: imageUrl}}
+              alt={name}
+              w="75%"
+              h="70%"
+              marginTop="auto"
+            />
 
-        </Flex>
+            <Text fontWeight={600} marginTop="auto" fontSize="lg" color="#502314">{name}</Text>  
+
+          </Flex>
       </TouchableWithoutFeedback>    
     </>
   )
