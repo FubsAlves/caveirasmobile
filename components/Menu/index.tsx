@@ -82,8 +82,9 @@ export default function Menu() {
         }}> 
         <VStack space={0} w="20%" h="90%"alignItems="center">
             <Flex>
+              {console.log(route.name)}
               {route.name === "Chickens" ? (
-                <Image source={require("../../assets/images/caveiras-logo.png")} w={9} h={9} alt="chickens-logo" />
+                <Image source={require("../../assets/images/chickens-logo.webp")} w={9} h={9} alt="chickens-logo" />
               ) : (
                 <Image source={require("../../assets/images/caveiras-logo.png")} w={9} h={9} alt="caveiras-logo" />
               )
