@@ -17,7 +17,7 @@ export default function NewsScreen () {
                         alignSelf="center" />
                     <ScrollView>
                         <CarouselNews/>
-                        <Flex w="100%" mb={5}>
+                        <Flex w="100%" my={5}>
                             <Image source={require('../assets/images/news/newschicken.jpg')} w="100%" h="210px" alt="news" />
                         </Flex>
 
