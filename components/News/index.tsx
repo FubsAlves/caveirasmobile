@@ -3,15 +3,6 @@ import { Dimensions } from 'react-native';
 import { useQuery } from "@apollo/client";
 import GET_NEWS from '../../queries/news';
 
-
-
-interface CarouselItemsProps {
-    image: {
-        url: string;
-    }
-    id: string;
-}
-
 export default function News() {
 
     const dimensions = {
