@@ -96,7 +96,7 @@ export default function Menu() {
         </VStack>
         </TouchableWithoutFeedback>
       </HStack>
-      <Flex w="100%" h="20%" shadow="6" backgroundColor={menuColor.footer}></Flex>
+      <Flex w="100%" h="20%" backgroundColor={menuColor.footer}></Flex>
     </Flex>
   );
 }
