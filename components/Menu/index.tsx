@@ -55,36 +55,27 @@ export default function Menu() {
             </Flex>
             <Text color={routeName === "News" ? menuColor.activate : menuColor.text} fontWeight="400.normal" fontSize="2xs">Home</Text>
         </VStack>
-      <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate('Home');
-      }}> 
+     
         <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton padding="0" icon={<MaterialIcons name="restaurant-menu" size={28} color={routeName !== "News" ? menuColor.activate : menuColor.text} />}/>
+              <IconButton padding="0" icon={<MaterialIcons name="restaurant-menu" size={28} color={routeName !== "News" ? menuColor.activate : menuColor.text} onPress={() => {navigation.navigate('Home');}} />}/>
             </Flex>
             <Text color={routeName !== "News" ? menuColor.activate : menuColor.text} fontWeight="300.bold" fontSize="2xs">Menu</Text>
         </VStack>
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => {
-          redirectTo(url.whatsapp);
-        }}> 
+  
         <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton padding={0} icon={<Ionicons name="logo-whatsapp" size={28} color={menuColor.text} />}/>
+              <IconButton padding={0} icon={<Ionicons name="logo-whatsapp" size={28} color={menuColor.text} onPress={() => {redirectTo(url.whatsapp);}} />}/>
             </Flex>
             <Text color={menuColor.text} fontWeight="400.normal" fontSize="2xs">Wapp</Text>
         </VStack>
-        </TouchableWithoutFeedback>
-        <TouchableWithoutFeedback onPress={() => {
-          redirectTo(url.instagram);
-        }}>
+    
         <VStack w="20%" h="90%" alignItems="center">
             <Flex mt={1}>
-              <IconButton padding={0} icon={<Ionicons name="logo-instagram" size={28} color={menuColor.text} />}/>
+              <IconButton padding={0} icon={<Ionicons name="logo-instagram" size={28} color={menuColor.text} onPress={() => {redirectTo(url.instagram);}} />}/>
             </Flex>
             <Text color={menuColor.text} fontWeight="400.normal" fontSize="2xs">Insta</Text>
         </VStack>
-        </TouchableWithoutFeedback>
         <TouchableWithoutFeedback onPress={() => {
         navigation.navigate('Carousel');
         }}> 
