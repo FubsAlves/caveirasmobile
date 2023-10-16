@@ -15,7 +15,6 @@ export default function NewsScreen () {
                         h="70px"
                         w="70px"
                         alignSelf="center" />
-                    <Divider bgColor="caveirito.100" />
                     <ScrollView>
                         <CarouselNews/>
                         <Flex w="100%" mb={5}>
