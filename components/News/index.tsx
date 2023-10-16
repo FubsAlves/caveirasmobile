@@ -22,7 +22,7 @@ export default function News() {
                 <>
                     {news.newss.map((item) => {
                         return(
-                            <Flex key={item.id} my={3} w={dimensions.width} h={dimensions.height * 0.35}>
+                            <Flex key={item.id} my={3} w={dimensions.width} h={dimensions.height * 0.3}>
                             <Image w="100%" h="100%" source={{uri: item.image.url}} resizeMode="stretch" alt="News"/>
                         </Flex>
                         )

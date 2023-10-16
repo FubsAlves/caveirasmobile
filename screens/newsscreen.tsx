@@ -15,10 +15,9 @@ export default function NewsScreen () {
                         h="70px"
                         w="70px"
                         alignSelf="center" />
-                    <ScrollView>
+                    <ScrollView indicatorStyle="black">
                         <CarouselNews/>
                         <News/>
-
                     </ScrollView>
                 </Flex>
 
