@@ -1,7 +1,7 @@
-import { useRoute } from "@react-navigation/native";
-import { Divider, Flex, HStack, Image, ScrollView, StatusBar, Text } from "native-base";
+import { Flex, Image, ScrollView, StatusBar, Text } from "native-base";
 import Menu from "../components/Menu";
 import CarouselNews from "../components/Carousel";
+import News from "../components/News";
 
 export default function NewsScreen () {
     return(
@@ -17,13 +17,7 @@ export default function NewsScreen () {
                         alignSelf="center" />
                     <ScrollView>
                         <CarouselNews/>
-                        <Flex w="100%" my={5}>
-                            <Image source={require('../assets/images/news/newschicken.jpg')} w="100%" h="210px" alt="news" />
-                        </Flex>
-
-                        <Flex w="100%" mb={2}>
-                            <Image source={require('../assets/images/news/news9.png')} w="100%" h="64" alt="news" />
-                        </Flex>
+                        <News/>
 
                     </ScrollView>
                 </Flex>
