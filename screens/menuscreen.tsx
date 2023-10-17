@@ -8,6 +8,7 @@ import { itemImages } from "../logosandimages";
 import { useRoute } from "@react-navigation/native";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
+import { ReactNativeZoomableView } from "@openspacelabs/react-native-zoomable-view";
 
 interface ItemProps {
   id: number;
@@ -94,7 +95,14 @@ export default function MenuScreen () {
         <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
         </Text>
-        <Flex mt={4}>
+        <ReactNativeZoomableView
+            maxZoom={1.5}
+            minZoom={0.5}
+            zoomStep={0.5}
+            initialZoom={1}
+            bindToBorders={true}
+            onZoomAfter={this.logOutZoomState}
+        >
               <Image
                 onLoadEnd={handleImageLoad}
                 style={{
@@ -106,8 +114,7 @@ export default function MenuScreen () {
                 }}
                 alt={item.name}
               />
-        </Flex>
-
+        </ReactNativeZoomableView>
         <Text color="#502314" w="90%" mt={2} fontSize="12" textAlign="center">
           {item.description}
         </Text>
