@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { FlatList, Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
-import { useRoute } from "@react-navigation/native";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
 import { ReactNativeZoomableView } from "@openspacelabs/react-native-zoomable-view";
@@ -26,11 +25,16 @@ interface ImageSource {
   url: string;
 }
 
+interface ModalProps {
+  state: boolean;
+  modalName: string;
+  imageUrl: string;
+}
 
 
 export default function MenuScreen () {
   
-  const [showModal, setShowModal] = useState(false);
+  const [showModal, setShowModal] = useState<ModalProps>({state: false, modalName: "", imageUrl: ""});
   
   const [isLoading, setIsLoading] = useState(true);
   const {loading, error, data} = useQuery(GET_SNACKS);
@@ -56,7 +60,7 @@ export default function MenuScreen () {
 
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
-      <SnackModal showModal={showModal} setShowModal={setShowModal} name={item.name}/>
+      <SnackModal showModal={showModal.state} setShowModal={setShowModal} modalName={showModal.modalName} imageUrl={showModal.imageUrl}/>
       <Flex w={Dimensions.get('window').width} alignItems="center" justifyContent="center" h="100%">
       <HStack space={4}  mt={2} alignItems="center">
           {item.logoSrc &&
@@ -86,7 +90,7 @@ export default function MenuScreen () {
         <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
         </Text>
-        <TouchableWithoutFeedback onPress={() => {setShowModal(true)}}>
+        <TouchableWithoutFeedback onPress={() => {setShowModal({state: true, modalName: item.name, imageUrl: item.imageSrc.url})}}>
         
         <Flex mt={4}>
           <Image

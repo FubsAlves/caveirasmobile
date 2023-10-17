@@ -1,24 +1,24 @@
 import { Button, Center, Modal } from "native-base";
 
-export default function SnackModal({showModal, setShowModal, name}: any) {
+export default function SnackModal({showModal, setShowModal, modalName, imageUrl}: any) {
     
     return (
     <Center>
-      <Modal isOpen={showModal} onClose={() => setShowModal(false)} size="lg">
-        <Modal.Content maxWidth="400px">
+      <Modal isOpen={showModal} onClose={() => setShowModal({state: false, modalName: "", imageUrl: ""})} size="lg">
+        <Modal.Content w="100%" h="100%">
           <Modal.CloseButton />
-          <Modal.Header>{name}</Modal.Header>
+          <Modal.Header>{modalName}</Modal.Header>
           <Modal.Body>
           </Modal.Body>
           <Modal.Footer>
             <Button.Group space={2}>
               <Button variant="ghost" colorScheme="blueGray" onPress={() => {
-              setShowModal(false);
+              setShowModal({state: false, modalName: "", imageUrl: ""});
             }}>
                 Cancel
               </Button>
               <Button onPress={() => {
-              setShowModal(false);
+              setShowModal({state: false, modalName: "", imageUrl: ""});
             }}>
                 Save
               </Button>
