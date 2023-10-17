@@ -8,6 +8,7 @@ import { useRoute } from "@react-navigation/native";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
 import { ReactNativeZoomableView } from "@openspacelabs/react-native-zoomable-view";
+import { Modal } from "native-base";
 
 interface ItemProps {
   id: number;
@@ -27,8 +28,8 @@ interface ImageSource {
 export default function MenuScreen () {
   
   const route = useRoute();
-  /* const [items, setItems] = useState<ItemProps[]>(itemImages); */
   const [isLoading, setIsLoading] = useState(true);
+  const [showModal, setShowModal] = useState(false);
   const {loading, error, data} = useQuery(GET_SNACKS);
 
   const dimensions = {
@@ -38,21 +39,6 @@ export default function MenuScreen () {
   
 
   useEffect(() => {
-
-    
-    /* if(route.name === "Chickens") {
-      let filteredItems = items.filter(item => item.category === "Frango");
-      setItems(filteredItems);
-    }
-    else if(route.name === "Tradicionais") {
-      let filteredItems = items.filter(item => item.category === "Tradicional");
-      setItems(filteredItems);
-    }
-    else if(route.name === "Assinaturas") {
-      let filteredItems = items.filter(item => item.category === "Assinatura");
-      setItems(filteredItems);
-    } */
-
 
     setTimeout(() => {
       setIsLoading(false);
