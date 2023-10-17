@@ -4,7 +4,6 @@ import { useState, useEffect } from "react";
 import { FlatList, Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions } from "react-native";
 import Loading from "../components/Loading";
-import { itemImages } from "../logosandimages";
 import { useRoute } from "@react-navigation/native";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
@@ -95,26 +94,19 @@ export default function MenuScreen () {
         <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
         </Text>
-        <ReactNativeZoomableView
-            maxZoom={1.5}
-            minZoom={0.5}
-            zoomStep={0.5}
-            initialZoom={1}
-            bindToBorders={true}
-            onZoomAfter={this.logOutZoomState}
-        >
-              <Image
-                onLoadEnd={handleImageLoad}
-                style={{
-                  width: dimensions.width * 0.75,
-                  height: dimensions.height * 0.35,
-                }}
-                source={{
-                  uri: item.imageSrc.url,
-                }}
-                alt={item.name}
-              />
-        </ReactNativeZoomableView>
+        <Flex mt={4}>
+          <Image
+            onLoadEnd={handleImageLoad}
+            style={{
+              width: dimensions.width * 0.75,
+              height: dimensions.height * 0.35,
+            }}
+            source={{
+              uri: item.imageSrc.url,
+            }}
+            alt={item.name}
+          />
+        </Flex>
         <Text color="#502314" w="90%" mt={2} fontSize="12" textAlign="center">
           {item.description}
         </Text>

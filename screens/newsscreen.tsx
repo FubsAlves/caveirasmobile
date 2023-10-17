@@ -1,4 +1,4 @@
-import { Flex, Image, ScrollView, StatusBar, Text } from "native-base";
+import { Flex, ScrollView, StatusBar, Text } from "native-base";
 import Menu from "../components/Menu";
 import CarouselNews from "../components/Carousel";
 import News from "../components/News";

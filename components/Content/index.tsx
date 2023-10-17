@@ -1,5 +1,4 @@
 import { Button, Flex, ScrollView } from "native-base";
-import Category from "./category";
 import CategoryCard from "./categorycard";
 import GET_CATEGORIES from "../../queries/categories";
 import { useQuery } from "@apollo/client";

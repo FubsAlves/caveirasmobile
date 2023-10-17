@@ -1,4 +1,4 @@
-import { Flex, Image, Text } from 'native-base';
+import { Flex, Image } from 'native-base';
 import { Dimensions } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { useQuery } from "@apollo/client";
