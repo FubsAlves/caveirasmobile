@@ -2,13 +2,14 @@ import Menu from "../components/Menu";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
 import { FlatList, Flex, Text, Image, HStack } from "native-base";
-import { View, Dimensions } from "react-native";
+import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
 import { useRoute } from "@react-navigation/native";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
 import { ReactNativeZoomableView } from "@openspacelabs/react-native-zoomable-view";
-import { Modal } from "native-base";
+import SnackModal from "../components/SnackModal";
+import React from "react";
 
 interface ItemProps {
   id: number;
@@ -25,17 +26,21 @@ interface ImageSource {
   url: string;
 }
 
+
+
 export default function MenuScreen () {
   
-  const route = useRoute();
-  const [isLoading, setIsLoading] = useState(true);
   const [showModal, setShowModal] = useState(false);
+  
+  const [isLoading, setIsLoading] = useState(true);
   const {loading, error, data} = useQuery(GET_SNACKS);
 
   const dimensions = {
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
   }
+
+  
   
 
   useEffect(() => {
@@ -51,6 +56,7 @@ export default function MenuScreen () {
 
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
+      <SnackModal showModal={showModal} setShowModal={setShowModal} name={item.name}/>
       <Flex w={Dimensions.get('window').width} alignItems="center" justifyContent="center" h="100%">
       <HStack space={4}  mt={2} alignItems="center">
           {item.logoSrc &&
@@ -80,6 +86,8 @@ export default function MenuScreen () {
         <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
         </Text>
+        <TouchableWithoutFeedback onPress={() => {setShowModal(true)}}>
+        
         <Flex mt={4}>
           <Image
             onLoadEnd={handleImageLoad}
@@ -93,6 +101,7 @@ export default function MenuScreen () {
             alt={item.name}
           />
         </Flex>
+        </TouchableWithoutFeedback>
         <Text color="#502314" w="90%" mt={2} fontSize="12" textAlign="center">
           {item.description}
         </Text>
@@ -102,6 +111,8 @@ export default function MenuScreen () {
       </Flex>
     </>
   );
+
+
 
   const renderLoading = () => (
     <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
