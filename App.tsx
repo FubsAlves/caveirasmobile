@@ -14,6 +14,7 @@ import client from './services/client';
 import NewsScreen from "./screens/newsscreen";
 import { CONFIG } from "./CONFIG";
 
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {

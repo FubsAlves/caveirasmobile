@@ -8,7 +8,8 @@ import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
 import SnackModal from "../components/SnackModal";
 import React from "react";
-import Pinchable from 'react-native-pinchable';
+import { ImageZoom } from "@likashefqet/react-native-image-zoom";
+import { Gesture, GestureHandlerRootView } from 'react-native-gesture-handler';
 
 interface ItemProps {
   id: number;
@@ -61,7 +62,7 @@ export default function MenuScreen () {
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
       {/* <SnackModal showModal={showModal.state} setShowModal={setShowModal} modalName={showModal.modalName} imageUrl={showModal.imageUrl}/> */}
-      <Flex w={Dimensions.get('window').width} alignItems="center" justifyContent="center" h="100%">
+      <GestureHandlerRootView style={{flex: 1, width: dimensions.width, height: "100%", alignItems:"center", justifyContent: "center"}}>
       <HStack space={4}  mt={2} alignItems="center">
           {item.logoSrc &&
             <Image
@@ -92,21 +93,20 @@ export default function MenuScreen () {
         </Text>
         <TouchableWithoutFeedback onPress={() => {setShowModal({state: true, modalName: item.name, imageUrl: item.imageSrc.url})}}>
         
-        <Flex mt={4}>
-          <Pinchable>
-            <Image
-              onLoadEnd={handleImageLoad}
-              style={{
-                width: dimensions.width * 0.75,
-                height: dimensions.height * 0.35,
-              }}
-              source={{
-                uri: item.imageSrc.url,
-              }}
-              alt={item.name}
-            />
-          </Pinchable>
+        <Flex zIndex={1000} mt={4} width={dimensions.width * 0.75} height={dimensions.height * 0.35}>
+          
+          <ImageZoom
+            style={{
+              width: dimensions.width * 0.75,
+              height: dimensions.height * 0.35,
+            }}
+            source={{
+              uri: item.imageSrc.url,
+            }}
+            alt={item.name}
+          />
         </Flex>
+        
         </TouchableWithoutFeedback>
         <Text color="#502314" w="90%" mt={2} fontSize="12" textAlign="center">
           {item.description}
@@ -114,7 +114,7 @@ export default function MenuScreen () {
         <Text color="#502314" mt={2} fontSize="2xl" fontWeight={600} textAlign="center">
           R${item.price}
         </Text>
-      </Flex>
+      </GestureHandlerRootView>
     </>
   );
 
