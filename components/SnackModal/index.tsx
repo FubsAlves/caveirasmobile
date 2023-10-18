@@ -1,31 +1,25 @@
-import { Button, Center, Modal } from "native-base";
+import { Image, Modal } from "native-base";
+import Pinchable from 'react-native-pinchable';
+import { Dimensions } from "react-native";
 
 export default function SnackModal({showModal, setShowModal, modalName, imageUrl}: any) {
     
+  const dimensions = {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
+  }
+
     return (
-    <Center>
-      <Modal isOpen={showModal} onClose={() => setShowModal({state: false, modalName: "", imageUrl: ""})} size="lg">
+      <Modal isOpen={showModal} onClose={() => setShowModal({state: false, modalName: "", imageUrl: "https://media.graphassets.com/9Xo4yzB4QBe4Va872Tw5"})}>
         <Modal.Content w="100%" h="100%">
           <Modal.CloseButton />
-          <Modal.Header>{modalName}</Modal.Header>
           <Modal.Body>
+            <Pinchable>
+              <Image w={dimensions.width * 1} h={dimensions.height * 0.4} source={{uri: imageUrl}} alt={modalName} fallbackSource={{uri: 'https://media.graphassets.com/9Xo4yzB4QBe4Va872Tw5'}}/>
+            </Pinchable>
           </Modal.Body>
-          <Modal.Footer>
-            <Button.Group space={2}>
-              <Button variant="ghost" colorScheme="blueGray" onPress={() => {
-              setShowModal({state: false, modalName: "", imageUrl: ""});
-            }}>
-                Cancel
-              </Button>
-              <Button onPress={() => {
-              setShowModal({state: false, modalName: "", imageUrl: ""});
-            }}>
-                Save
-              </Button>
-            </Button.Group>
-          </Modal.Footer>
         </Modal.Content>
       </Modal>
-    </Center>
+
     );
 }

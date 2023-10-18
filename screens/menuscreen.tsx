@@ -6,9 +6,9 @@ import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
-import { ReactNativeZoomableView } from "@openspacelabs/react-native-zoomable-view";
 import SnackModal from "../components/SnackModal";
 import React from "react";
+import Pinchable from 'react-native-pinchable';
 
 interface ItemProps {
   id: number;
@@ -34,7 +34,7 @@ interface ModalProps {
 
 export default function MenuScreen () {
   
-  const [showModal, setShowModal] = useState<ModalProps>({state: false, modalName: "", imageUrl: ""});
+  const [showModal, setShowModal] = useState<ModalProps>({state: false, modalName: "", imageUrl: "https://media.graphassets.com/9Xo4yzB4QBe4Va872Tw5"});
   
   const [isLoading, setIsLoading] = useState(true);
   const {loading, error, data} = useQuery(GET_SNACKS);
@@ -60,7 +60,7 @@ export default function MenuScreen () {
 
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
-      <SnackModal showModal={showModal.state} setShowModal={setShowModal} modalName={showModal.modalName} imageUrl={showModal.imageUrl}/>
+      {/* <SnackModal showModal={showModal.state} setShowModal={setShowModal} modalName={showModal.modalName} imageUrl={showModal.imageUrl}/> */}
       <Flex w={Dimensions.get('window').width} alignItems="center" justifyContent="center" h="100%">
       <HStack space={4}  mt={2} alignItems="center">
           {item.logoSrc &&
@@ -93,17 +93,19 @@ export default function MenuScreen () {
         <TouchableWithoutFeedback onPress={() => {setShowModal({state: true, modalName: item.name, imageUrl: item.imageSrc.url})}}>
         
         <Flex mt={4}>
-          <Image
-            onLoadEnd={handleImageLoad}
-            style={{
-              width: dimensions.width * 0.75,
-              height: dimensions.height * 0.35,
-            }}
-            source={{
-              uri: item.imageSrc.url,
-            }}
-            alt={item.name}
-          />
+          <Pinchable>
+            <Image
+              onLoadEnd={handleImageLoad}
+              style={{
+                width: dimensions.width * 0.75,
+                height: dimensions.height * 0.35,
+              }}
+              source={{
+                uri: item.imageSrc.url,
+              }}
+              alt={item.name}
+            />
+          </Pinchable>
         </Flex>
         </TouchableWithoutFeedback>
         <Text color="#502314" w="90%" mt={2} fontSize="12" textAlign="center">
