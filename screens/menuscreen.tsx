@@ -9,6 +9,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { ImageZoom } from "@likashefqet/react-native-image-zoom";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import Animated, { BounceInDown, FadeIn, FadeInDown } from "react-native-reanimated";
 
 interface ItemProps {
   id: number;
@@ -134,7 +135,8 @@ export default function MenuScreen () {
           {isLoading ? (
             renderLoading()
           ) : (
-            <FlatList
+            <Animated.FlatList
+              entering={FadeInDown.duration(500)}
               data={data.snacks}
               style={{ flex: 1, flexDirection: "row" }}
               renderItem={renderItem}

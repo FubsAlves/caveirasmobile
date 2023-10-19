@@ -3,6 +3,7 @@ import CategoryCard from "./categorycard";
 import GET_CATEGORIES from "../../queries/categories";
 import { useQuery } from "@apollo/client";
 import Loading from "../Loading";
+import Animated, { FlipInEasyY } from "react-native-reanimated";
 
 export default function Content( {navigation} : any ) {
   
@@ -21,7 +22,9 @@ export default function Content( {navigation} : any ) {
             
             {data.categories.map((category) => {
               return (
-                <CategoryCard navigation={navigation} key={category.id} name={category.name} imageUrl={category.snackImage.url}/>
+                <Animated.View key={category.id} entering={FlipInEasyY.duration(500)}>
+                  <CategoryCard navigation={navigation} name={category.name} imageUrl={category.snackImage.url}/>
+                </Animated.View>
               )
             })}
             

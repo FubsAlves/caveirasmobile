@@ -1,8 +1,9 @@
-import { Flex, Image } from 'native-base';
+import { Center, Flex, Image } from 'native-base';
 import { Dimensions } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { useQuery } from "@apollo/client";
 import GET_CAROUSELNEWS from '../../queries/carouselnews';
+import Loading from '../Loading';
 
 
 interface CarouselItemsProps {
@@ -23,9 +24,9 @@ export default function CarouselNews() {
 
 
     return (
-        <Flex>
+        <>
             {loading === true ? (
-                console.log("Loading")
+                console.log("")
             ) : 
             (
                 
@@ -50,6 +51,6 @@ export default function CarouselNews() {
             />
             )}
       
-    </Flex>
+    </>
     );
 }

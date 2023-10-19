@@ -1,6 +1,8 @@
 import { NavigationProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Flex, IconButton, Image } from "native-base";
 import { AntDesign } from '@expo/vector-icons';
+import Animated, { FadeIn, FlipInEasyY } from "react-native-reanimated";
+import { Dimensions } from "react-native";
 
 export default function Header() {
   
@@ -10,8 +12,14 @@ export default function Header() {
   const handleNavigate = () => {
     navigation.navigate('Home');
   };
+
+  const dimensions = {
+    width: Dimensions.get("window").width,
+    height: Dimensions.get("window").height,
+  }
   
   return (
+    
     <Flex
     backgroundColor= {route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
     width="100%"
@@ -34,18 +42,20 @@ export default function Header() {
       ) : ""}
       
       {route.name === "Chickens" ? (
-        <Image 
+        
+        <Animated.Image
+        entering={FlipInEasyY.duration(1000)}
+        style={{height:dimensions.height * 0.12, width: dimensions.width * 0.25 }}
         source={require('../../assets/images/chickens-logo.webp')}
-        alt="Caveiras Logo"
-        h="100px"
-        w="100px"
-        />   
+        alt="Chickens Logo"
+      />   
       ) : (
-        <Image 
-        source={require('../../assets/images/caveiras-logo.png')}
-        alt="Caveiras Logo"
-        h="100px"
-        w="100px"
+        
+        <Animated.Image
+          entering={FlipInEasyY.duration(1000)}
+          style={{height:dimensions.height * 0.15, width: dimensions.width * 0.25 }}
+          source={require('../../assets/images/caveiras-logo.png')}
+          alt="Caveiras Logo"
         /> 
       )}
       
