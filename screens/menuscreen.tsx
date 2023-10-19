@@ -10,6 +10,7 @@ import React from "react";
 import { ImageZoom } from "@likashefqet/react-native-image-zoom";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { BounceInDown, FadeIn, FadeInDown } from "react-native-reanimated";
+import { useRoute } from "@react-navigation/native";
 
 interface ItemProps {
   id: number;
@@ -36,7 +37,7 @@ interface ModalProps {
 export default function MenuScreen () {
   
   const [showModal, setShowModal] = useState<ModalProps>({state: false, modalName: "", imageUrl: "https://media.graphassets.com/9Xo4yzB4QBe4Va872Tw5"});
-  
+  const route = useRoute();
   const [isLoading, setIsLoading] = useState(true);
   const {loading, error, data} = useQuery(GET_SNACKS);
 
@@ -61,7 +62,6 @@ export default function MenuScreen () {
 
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
-      {/* <SnackModal showModal={showModal.state} setShowModal={setShowModal} modalName={showModal.modalName} imageUrl={showModal.imageUrl}/> */}
       <GestureHandlerRootView style={{flex: 1, width: dimensions.width, height: "100%", alignItems:"center", justifyContent: "center"}}>
       <HStack space={4}  mt={2} alignItems="center">
           {item.logoSrc &&
@@ -90,8 +90,9 @@ export default function MenuScreen () {
         </HStack>
         <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
+            
         </Text>
-        <TouchableWithoutFeedback onPress={() => {setShowModal({state: true, modalName: item.name, imageUrl: item.imageSrc.url})}}>
+        <TouchableWithoutFeedback onPress={() => {}}>
         
         <Flex zIndex={1000} mt={4} width={dimensions.width * 0.75} height={dimensions.height * 0.35}>
           
@@ -116,6 +117,7 @@ export default function MenuScreen () {
         </Text>
       </GestureHandlerRootView>
     </>
+    
   );
 
 
