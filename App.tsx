@@ -62,7 +62,6 @@ export default function App() {
             <Stack.Screen name="News" component={NewsScreen} />
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Menu" component={MenuScreen} />
-            
           </Stack.Navigator>
         </NavigationContainer>
       </NativeBaseProvider>

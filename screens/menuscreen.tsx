@@ -1,7 +1,7 @@
 import Menu from "../components/Menu";
 import Header from "../components/Header";
 import { useState, useEffect } from "react";
-import { FlatList, Flex, Text, Image, HStack } from "native-base";
+import { Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
 import GET_SNACKS from "../queries/snacks"
@@ -9,7 +9,7 @@ import { useQuery } from "@apollo/client";
 import React from "react";
 import { ImageZoom } from "@likashefqet/react-native-image-zoom";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import Animated, { BounceInDown, FadeIn, FadeInDown } from "react-native-reanimated";
+import Animated, { FadeInDown } from "react-native-reanimated";
 import { useRoute } from "@react-navigation/native";
 
 interface ItemProps {
