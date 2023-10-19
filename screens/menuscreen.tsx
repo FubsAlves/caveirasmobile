@@ -6,10 +6,9 @@ import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
-import SnackModal from "../components/SnackModal";
 import React from "react";
 import { ImageZoom } from "@likashefqet/react-native-image-zoom";
-import { Gesture, GestureHandlerRootView } from 'react-native-gesture-handler';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 
 interface ItemProps {
   id: number;
