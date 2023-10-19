@@ -13,7 +13,7 @@ export default function CategoryCard({name, imageUrl, navigation}: any) {
   return (
     <>
       <TouchableWithoutFeedback onPress={() => {
-        navigation.navigate(name);
+        navigation.navigate("Menu", {categoryParam: name});
       }}>
   
 
