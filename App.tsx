@@ -13,6 +13,7 @@ import { THEME } from './THEME';
 import client from './services/client';
 import NewsScreen from "./screens/newsscreen";
 import { CONFIG } from "./CONFIG";
+import Header from "./components/Header";
 
 
 const Stack = createNativeStackNavigator();

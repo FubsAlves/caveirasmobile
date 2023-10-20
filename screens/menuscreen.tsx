@@ -45,25 +45,20 @@ export default function MenuScreen () {
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
   }
-
   
-  
-
   useEffect(() => {
+
 
     setTimeout(() => {
       setIsLoading(false);
     }, 1200);
   }, []);
 
-  const handleImageLoad = () => {
-    setIsLoading(false);
-  };
 
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
-      <GestureHandlerRootView style={{flex: 1, width: dimensions.width, height: "100%", alignItems:"center", justifyContent: "center"}}>
-      <HStack space={4}  mt={2} alignItems="center">
+      <GestureHandlerRootView style={{width: dimensions.width, height: "100%", alignItems:"center", justifyContent: "center"}}>
+      {<HStack space={6}  mt={2} alignItems="center">
           {item.logoSrc &&
             <Image
               source={{
@@ -87,7 +82,7 @@ export default function MenuScreen () {
           />
           
           }
-        </HStack>
+        </HStack>}
         <Text color="#502314" fontWeight={600} fontSize={20}>
             {item.name}
             
@@ -133,7 +128,7 @@ export default function MenuScreen () {
       <Header />
 
       <Flex w="100%" alignItems="center" h="72%" bgColor="#FFFFFF">
-        <View style={{ flex: 1, flexGrow: 1, flexDirection: "column" }}>
+        <View style={{ flex: 1, flexGrow: 1, flexDirection: "column", padding: 0 }}>
           {isLoading ? (
             renderLoading()
           ) : (
@@ -145,11 +140,10 @@ export default function MenuScreen () {
               pagingEnabled={true}
               horizontal={true}
               showsHorizontalScrollIndicator={false}
-              removeClippedSubviews={true} // Optimize performance by unmounting off-screen items
+              /* removeClippedSubviews={true} */ // Optimize performance by unmounting off-screen items
               initialNumToRender={3} // Number of items to render initially
               maxToRenderPerBatch={1} // Number of items to render in each batch
               windowSize={3} // Number of items in the visible window
-              getItemLayout={(items, index) => ({ length: 300, offset: 300 * index, index })} // Specify item height and position for faster scrolling
             />
           )}
         </View>
