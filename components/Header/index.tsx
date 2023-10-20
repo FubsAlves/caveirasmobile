@@ -9,6 +9,7 @@ export default function Header() {
   const navigation: NavigationProp = useNavigation();
   const route = useRoute();
 
+
   const handleNavigate = () => {
     navigation.navigate('Home');
   };
@@ -27,7 +28,7 @@ export default function Header() {
     justifyContent="center"
     alignItems="center"
     safeArea
-  >  
+    >  
 
       {route.name !== "Home" ? (
         <IconButton
@@ -60,7 +61,6 @@ export default function Header() {
         /> 
       )}
       
-
   </Flex>
   )
 }
