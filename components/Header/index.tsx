@@ -3,6 +3,8 @@ import { Flex, IconButton } from "native-base";
 import { AntDesign } from '@expo/vector-icons';
 import Animated, { FlipInEasyY } from "react-native-reanimated";
 import { Dimensions } from "react-native";
+import { useEffect } from "react";
+
 
 export default function Header() {
   
@@ -18,19 +20,20 @@ export default function Header() {
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
   }
-  
+
   return (
-    
+        
     <Flex
-    backgroundColor= {route.name === "Chickens" ? 'chickens.100' : 'caveirito.100'}
+    backgroundColor= {route.params && route.params.name === "Chickens" ? "chickens.100" : "caveirito.100"}
     width="100%"
     height= "18%"
     justifyContent="center"
     alignItems="center"
     safeArea
     >  
-
+      
       {route.name !== "Home" ? (
+        
         <IconButton
         position="absolute"
         top="10%"
@@ -39,11 +42,10 @@ export default function Header() {
         onPress={()=>{
           handleNavigate();
         }}
-        
       />
       ) : ""}
       
-      {route.name === "Chickens" ? (
+      {route.params && route.params.name === "Chickens" ? (
         
         <Animated.Image
         entering={FlipInEasyY.duration(1000)}
@@ -52,6 +54,7 @@ export default function Header() {
         alt="Chickens Logo"
       />   
       ) : (
+        
         
         <Animated.Image
           entering={FlipInEasyY.duration(1000)}
