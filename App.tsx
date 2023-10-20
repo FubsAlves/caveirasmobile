@@ -59,7 +59,7 @@ export default function App() {
         <NavigationContainer>
           <View onLayout={onLayoutRootView} />
           <Stack.Navigator initialRouteName="News" screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="News" component={NewsScreen} />
+            <Stack.Screen name="News" initialParams={{themeColor: ""}} component={NewsScreen} />
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="Menu" component={MenuScreen} />
           </Stack.Navigator>
