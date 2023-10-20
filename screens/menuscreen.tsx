@@ -38,10 +38,11 @@ export default function MenuScreen () {
   
   const [showModal, setShowModal] = useState<ModalProps>({state: false, modalName: "", imageUrl: "https://media.graphassets.com/9Xo4yzB4QBe4Va872Tw5"});
   const route = useRoute();
+  const params = route.params.name
   const [isLoading, setIsLoading] = useState(true);
-  const {loading, error, data} = useQuery(GET_SNACKS);
-
-
+  const {loading, error, data} = useQuery(GET_SNACKS, {
+    variables: {params},
+  });
 
 
   const dimensions = {
@@ -50,7 +51,6 @@ export default function MenuScreen () {
   }
   
   useEffect(() => {
-
     setTimeout(() => {
       setIsLoading(false);
     }, 1200);
