@@ -1,6 +1,6 @@
 import Menu from "../components/Menu";
 import Header from "../components/Header";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
@@ -10,6 +10,7 @@ import { ImageZoom } from "@likashefqet/react-native-image-zoom";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { useRoute } from "@react-navigation/native";
+import LottieView from 'lottie-react-native';
 
 interface ItemProps {
   id: number;
@@ -30,6 +31,7 @@ export default function MenuScreen () {
   
   const route = useRoute();
   const params = route.params.name;
+  const animation = useRef(null);
   const [isLoading, setIsLoading] = useState(true);
   const {loading, error, data} = useQuery(GET_SNACKS, {
     variables: {params},
@@ -51,6 +53,8 @@ export default function MenuScreen () {
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
       <GestureHandlerRootView style={{width: dimensions.width, height: "100%", alignItems:"center", justifyContent: "center"}}>
+      
+      <LottieView style={{position: "absolute", zIndex: 1001, width: 60, height: 60, top: "15%", left: "10%"}} autoPlay loop={true} ref={animation} source={require('../assets/animation/newSnack.json')}/>
       {<HStack space={6}  mt={2} alignItems="center">
           {item.logoSrc &&
             <Image

@@ -10,6 +10,7 @@ export default function Header() {
   
   const navigation: NavigationProp = useNavigation();
   const route = useRoute();
+  
 
 
   const handleNavigate = () => {
