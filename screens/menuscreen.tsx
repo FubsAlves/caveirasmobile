@@ -6,7 +6,6 @@ import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
 import GET_SNACKS from "../queries/snacks"
 import { useQuery } from "@apollo/client";
-import React from "react";
 import { ImageZoom } from "@likashefqet/react-native-image-zoom";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { FadeInDown } from "react-native-reanimated";
@@ -26,13 +25,6 @@ interface ItemProps {
 interface ImageSource {
   url: string;
 }
-
-interface ModalProps {
-  state: boolean;
-  modalName: string;
-  imageUrl: string;
-}
-
 
 export default function MenuScreen () {
   
