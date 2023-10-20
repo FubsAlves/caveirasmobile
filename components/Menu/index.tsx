@@ -27,14 +27,13 @@ export default function Menu() {
   }
 
   useEffect(() => {
-    switch (routeName) {
-      case 'Chickens':
-        setMenuColor({footer: "#f07100", text: "#3e3e3e", activate: "#FF8B24"})
-        break;
-      default:
-        setMenuColor({footer: "#B71105", text: "#3e3e3e", activate: "#E91606"})
-        break;
+    if(route.params && route.params.name === "Chickens") {
+      setMenuColor({footer: "#f07100", text: "#3e3e3e", activate: "#FF8B24"})
     }
+    else {
+      setMenuColor({footer: "#B71105", text: "#3e3e3e", activate: "#E91606"})
+    }
+  
   }, [routeName]);
 
 
