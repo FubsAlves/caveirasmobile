@@ -16,6 +16,9 @@ const GET_SNACKS = gql`
             imageSrc {
                 url
             }
+            category {
+                name
+            }
         }
     }
 `;

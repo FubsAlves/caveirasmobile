@@ -41,13 +41,15 @@ export default function MenuScreen () {
   const [isLoading, setIsLoading] = useState(true);
   const {loading, error, data} = useQuery(GET_SNACKS);
 
+
+
+
   const dimensions = {
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
   }
   
   useEffect(() => {
-
 
     setTimeout(() => {
       setIsLoading(false);
@@ -89,12 +91,13 @@ export default function MenuScreen () {
         </Text>
         <TouchableWithoutFeedback onPress={() => {}}>
         
-        <Flex zIndex={1000} mt={4} width={dimensions.width * 0.75} height={dimensions.height * 0.35}>
+        <Flex zIndex={1000} mt={4} width={dimensions.width * 0.8} height={dimensions.height * 0.4}>
           
           <ImageZoom
+            
             style={{
-              width: dimensions.width * 0.75,
-              height: dimensions.height * 0.35,
+              width: dimensions.width * 0.8,
+              height: dimensions.height * 0.4,
             }}
             source={{
               uri: item.imageSrc.url,
@@ -128,7 +131,7 @@ export default function MenuScreen () {
       <Header />
 
       <Flex w="100%" alignItems="center" h="72%" bgColor="#FFFFFF">
-        <View style={{ flex: 1, flexGrow: 1, flexDirection: "column", padding: 0 }}>
+        <View style={{ flex: 1, flexGrow: 1, flexDirection: "column" }}>
           {isLoading ? (
             renderLoading()
           ) : (
@@ -140,7 +143,7 @@ export default function MenuScreen () {
               pagingEnabled={true}
               horizontal={true}
               showsHorizontalScrollIndicator={false}
-              /* removeClippedSubviews={true} */ // Optimize performance by unmounting off-screen items
+              removeClippedSubviews={true} // Optimize performance by unmounting off-screen items
               initialNumToRender={3} // Number of items to render initially
               maxToRenderPerBatch={1} // Number of items to render in each batch
               windowSize={3} // Number of items in the visible window
