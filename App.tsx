@@ -23,7 +23,7 @@ const Tab = createBottomTabNavigator();
 
 function Tabs () {
   return(
-    <Tab.Navigator screenOptions={{ headerShown: false, tabBarStyle: {backgroundColor: '#B71105'} }}>
+    <Tab.Navigator screenOptions={{ headerShown: false }}>
         <Tab.Screen
           name="News"
           component={NewsScreen}
