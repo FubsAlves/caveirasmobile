@@ -3,8 +3,6 @@ import { Flex, IconButton } from "native-base";
 import { AntDesign } from '@expo/vector-icons';
 import Animated, { FlipInEasyY } from "react-native-reanimated";
 import { Dimensions } from "react-native";
-import { useEffect } from "react";
-
 
 export default function Header() {
   
@@ -32,7 +30,6 @@ export default function Header() {
     alignItems="center"
     safeArea
     >  
-      
       {route.name !== "Home" ? (
         
         <IconButton

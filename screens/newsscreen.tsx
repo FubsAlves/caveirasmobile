@@ -18,7 +18,7 @@ export default function NewsScreen () {
                 </Flex>
 
             </Flex>
-            <Menu/>
+            {/* <Menu/> */}
         </>
     );
 }

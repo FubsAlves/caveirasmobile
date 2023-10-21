@@ -19,6 +19,7 @@
     "@apollo/client": "^3.8.4",
     "@expo/webpack-config": "^19.0.0",
     "@likashefqet/react-native-image-zoom": "^2.1.1",
+    "@react-navigation/bottom-tabs": "^6.5.10",
     "@react-navigation/native": "^6.1.8",
     "@react-navigation/native-stack": "^6.9.14",
     "@reduxjs/toolkit": "^1.9.7",

@@ -131,7 +131,7 @@ export default function MenuScreen() {
           </Suspense>
         </View>
       </Flex>
-      <Menu />
+      {/* <Menu /> */}
     </>
   );
 }

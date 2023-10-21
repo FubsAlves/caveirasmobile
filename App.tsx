@@ -13,15 +13,41 @@ import { THEME } from './THEME';
 import client from './services/client';
 import NewsScreen from "./screens/newsscreen";
 import { CONFIG } from "./CONFIG";
-import Header from "./components/Header";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+import { Ionicons } from '@expo/vector-icons';
+import { MaterialIcons } from '@expo/vector-icons'; 
 
 const Stack = createNativeStackNavigator();
+const Tab = createBottomTabNavigator();
+
+function Tabs () {
+  return(
+    <Tab.Navigator screenOptions={{ headerShown: false, tabBarStyle: {backgroundColor: '#B71105'} }}>
+        <Tab.Screen
+          name="News"
+          component={NewsScreen}
+          options={{ title: "Home", tabBarIcon: ({focused}) => {
+            return (
+              <MaterialIcons name="home-filled" size={28} color={focused ? '#B71105' : '#3e3e3e' } />
+            )
+          }, tabBarActiveTintColor: '#B71105', tabBarInactiveTintColor: "#3e3e3e", tabBarStyle: {} }}
+        />
+        <Tab.Screen
+          name="Home"
+          component={HomeScreen}
+          options={{ title: "Menu", tabBarIcon: ({focused}) => {
+            return <MaterialIcons name="restaurant-menu" size={28} color={focused ? '#B71105' : '#3e3e3e' }/>
+          }, tabBarActiveTintColor: '#B71105', tabBarInactiveTintColor: "#3e3e3e"}}
+        />
+    </Tab.Navigator>
+  );
+}
 
 export default function App() {
-  
+
   const [appIsReady, setAppIsReady] = useState(false);
-  
+
   const [fontsLoaded] = useFonts({
     'Flame-Regular': require('./assets/fonts/flame/Flame-Regular.otf'),
     'Flame-Sans': require('./assets/fonts/flame/Flame-Sans.otf'),
@@ -60,8 +86,7 @@ export default function App() {
         <NavigationContainer>
           <View onLayout={onLayoutRootView} />
           <Stack.Navigator initialRouteName="News" screenOptions={{ headerShown: false }}>
-            <Stack.Screen name="News" component={NewsScreen} />
-            <Stack.Screen name="Home" component={HomeScreen} />
+            <Stack.Screen name="Tabs" component={Tabs} />
             <Stack.Screen name="Menu" component={MenuScreen} />
           </Stack.Navigator>
         </NavigationContainer>

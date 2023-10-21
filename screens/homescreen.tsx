@@ -15,7 +15,7 @@ export default function HomeScreen() {
         <StatusBar hidden />
         <Header/>
         <Content navigation={screen} />
-        <Menu/>
+        {/* <Menu/> */}
         
     </>
   
