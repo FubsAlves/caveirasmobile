@@ -7,7 +7,7 @@ export default function NewsScreen () {
     return(
         <>
         <StatusBar hidden />
-            <Flex w="100%" h="90%" backgroundColor="caveirito.100" justifyContent="center" alignItems="center">
+            <Flex w="100%" h="100%" backgroundColor="caveirito.100" justifyContent="center" alignItems="center">
                 <Flex shadow="3" borderRadius="3xl" borderBottomRadius="none" w="100%" h="100%" backgroundColor="#FFFFFF">
                     <Header/>
                     <ScrollView indicatorStyle="black">

@@ -16,7 +16,7 @@ export default function Content( {navigation} : any ) {
     <Flex h="72%" w="100%">
         <Suspense fallback={<Loading/>}>
           <ScrollView>
-            <Flex w="100%" h="100%" flexDirection="row" alignItems="flex-end" justifyContent="space-evenly" flexWrap="wrap">
+            <Flex  w="100%" h="100%" flexDirection="row" alignItems="flex-end" justifyContent="space-evenly" flexWrap="wrap">
               
               {data.categories.map((category, index) => {
                 return (
