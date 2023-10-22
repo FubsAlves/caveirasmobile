@@ -10,6 +10,7 @@ import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { FadeInDown } from "react-native-reanimated";
 import { useRoute } from "@react-navigation/native";
 import LottieView from 'lottie-react-native';
+import GET_NEWESTSNACKS from "../queries/newestsnacks";
 
 interface ItemProps {
   id: number;
@@ -30,8 +31,9 @@ export default function MenuScreen() {
 
   const route = useRoute();
   const params = route.params.name;
+  const QUERY = params === "Lançamentos" ? GET_NEWESTSNACKS : GET_SNACKS;
   const animation = useRef(null);
-  const { error, data } = useSuspenseQuery(GET_SNACKS, {
+  const { error, data } = useSuspenseQuery(QUERY, {
     variables: { params },
   });
 
@@ -83,7 +85,7 @@ export default function MenuScreen() {
 
               style={{
                 width: dimensions.width * 0.8,
-                height: dimensions.height * 0.4,
+                height: dimensions.height * 0.3,
               }}
               source={{
                 uri: item.imageSrc.url,
