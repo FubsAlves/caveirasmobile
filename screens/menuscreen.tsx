@@ -1,4 +1,3 @@
-import Menu from "../components/Menu";
 import Header from "../components/Header";
 import { useRef, Suspense } from "react";
 import { Flex, Text, Image, HStack } from "native-base";
