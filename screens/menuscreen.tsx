@@ -1,11 +1,11 @@
 import Menu from "../components/Menu";
 import Header from "../components/Header";
-import { useState, useEffect, useRef, Suspense } from "react";
+import { useRef, Suspense } from "react";
 import { Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
 import GET_SNACKS from "../queries/snacks"
-import { useQuery, useSuspenseQuery } from "@apollo/client";
+import { useSuspenseQuery } from "@apollo/client";
 import { ImageZoom } from "@likashefqet/react-native-image-zoom";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { FadeInDown } from "react-native-reanimated";
