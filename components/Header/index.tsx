@@ -55,7 +55,6 @@ export default function Header() {
         
         
         <Animated.Image
-          entering={FlipInEasyY.duration(1000)}
           style={{height:dimensions.height * 0.15, width: dimensions.width * 0.25 }}
           source={require('../../assets/images/caveiras-logo.png')}
           alt="Caveiras Logo"

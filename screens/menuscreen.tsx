@@ -57,8 +57,7 @@ export default function MenuScreen() {
               w={12}
             />
           }
-          <LottieView style={{width: 55, height: 55 }} autoPlay loop={true} ref={animation} source={require('../assets/animation/newSnack.json')} />
-
+  
           {item.secondaryLogoSrc &&
 
             <Image
@@ -79,7 +78,7 @@ export default function MenuScreen() {
         <TouchableWithoutFeedback onPress={() => { }}>
 
           <Flex zIndex={1000} mt={4} width={dimensions.width * 0.8} height={dimensions.height * 0.4}>
-
+            <LottieView style={{position: "absolute", top: '5%', width: 55, height: 55 }} autoPlay loop={true} ref={animation} source={require('../assets/animation/newSnack.json')} />
             <ImageZoom
 
               style={{
@@ -110,7 +109,7 @@ export default function MenuScreen() {
     <>
       <Header />
 
-      <Flex w="100%" alignItems="center" h="72%" bgColor="#FFFFFF">
+      <Flex w="100%" alignItems="center" h="82%" bgColor="#FFFFFF">
         <View style={{ flex: 1, flexGrow: 1, flexDirection: "column" }}>
 
           <Suspense fallback={<Loading />}>
