@@ -56,7 +56,7 @@ export default function Header() {
         
         <Animated.Image
           style={{height:dimensions.height * 0.15, width: dimensions.width * 0.25 }}
-          source={require('../../assets/images/caveiras-logo.png')}
+          source={require('../../assets/images/caveiras-logo.webp')}
           alt="Caveiras Logo"
         /> 
       )}
