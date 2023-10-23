@@ -1,13 +1,18 @@
 import { gql } from "@apollo/client";
 
 const GET_NEWS = gql`
-    query CarouselNews {
+    query News {
         newss(where: { isCarouselItem: false }, orderBy: updatedAt_DESC) {
-        id
-        image {
-            url
-        }
-
+            id
+            image {
+                url
+            }
+            snackRef {
+                name
+                category {
+                    name
+                }
+            }
         }
     } 
 `;

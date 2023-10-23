@@ -1,10 +1,10 @@
 import Header from "../components/Header";
-import { useRef, Suspense } from "react";
+import { useRef, Suspense, useState, useEffect } from "react";
 import { Flex, Text, Image, HStack } from "native-base";
 import { View, Dimensions, TouchableWithoutFeedback } from "react-native";
 import Loading from "../components/Loading";
 import GET_SNACKS from "../queries/snacks"
-import { useSuspenseQuery } from "@apollo/client";
+import { useQuery, useSuspenseQuery } from "@apollo/client";
 import { ImageZoom } from "@likashefqet/react-native-image-zoom";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import Animated, { FadeInDown } from "react-native-reanimated";
@@ -32,17 +32,24 @@ export default function MenuScreen() {
 
   const route = useRoute();
   const params = route.params.name;
+  const snackRef = route.params.selectedSnack;
   const QUERY = params === "Lançamentos" ? GET_NEWESTSNACKS : GET_SNACKS;
   const animation = useRef(null);
-  const { error, data } = useSuspenseQuery(QUERY, {
+  const { loading, error, data } = useQuery(QUERY, 
+    {
+      
     variables: { params },
-  });
+    }
+  );
+
+
 
 
   const dimensions = {
     width: Dimensions.get("window").width,
     height: Dimensions.get("window").height,
   }
+
 
   const renderItem = ({ item }: { item: ItemProps }) => (
     <>
@@ -115,7 +122,7 @@ export default function MenuScreen() {
       <Flex w="100%" alignItems="center" h="82%" bgColor="#FFFFFF">
         <View style={{ flex: 1, flexGrow: 1, flexDirection: "column" }}>
 
-          <Suspense fallback={<Loading />}>
+          {loading ? (<Loading/>) : (
             <Animated.FlatList
               entering={FadeInDown.duration(500)}
               data={data.snacks}
@@ -129,7 +136,7 @@ export default function MenuScreen() {
               maxToRenderPerBatch={1} // Number of items to render in each batch
               windowSize={3} // Number of items in the visible window
             />
-          </Suspense>
+            ) }
         </View>
       </Flex>
     </>

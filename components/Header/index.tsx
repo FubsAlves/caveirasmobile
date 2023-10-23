@@ -1,7 +1,7 @@
 import { NavigationProp, useNavigation, useRoute } from "@react-navigation/native";
 import { Flex, IconButton } from "native-base";
 import { AntDesign } from '@expo/vector-icons';
-import Animated, { FlipInEasyY } from "react-native-reanimated";
+import Animated from "react-native-reanimated";
 import { Dimensions } from "react-native";
 
 export default function Header() {

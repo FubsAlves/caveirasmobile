@@ -1,9 +1,11 @@
 import { Center, Flex, Image } from 'native-base';
-import { Dimensions } from 'react-native';
+import { Dimensions, TouchableWithoutFeedback } from 'react-native';
 import Carousel from 'react-native-reanimated-carousel';
 import { useQuery } from "@apollo/client";
 import GET_CAROUSELNEWS from '../../queries/carouselnews';
 import Loading from '../Loading';
+import { NavigationProp, useNavigation } from '@react-navigation/native';
+import { useEffect, useState } from 'react';
 
 
 interface CarouselItemsProps {
@@ -15,13 +17,14 @@ interface CarouselItemsProps {
 
 export default function CarouselNews() {
 
+    const navigation: NavigationProp = useNavigation();
+    
     const dimensions = {
         width: Dimensions.get("window").width,
         height: Dimensions.get("window").height,
       }
 
-      const {loading, error, data} = useQuery(GET_CAROUSELNEWS);
-
+      const {loading, error, data} = useQuery<any>(GET_CAROUSELNEWS);
 
     return (
         <>
@@ -38,19 +41,20 @@ export default function CarouselNews() {
                 autoPlayInterval={4000}
                 data={data.newss}
                 scrollAnimationDuration={1500}
-                /* onSnapToItem={(index) => console.log('current index:', index)} */
                 renderItem={({item} : any) => (
-                    <Flex
-                        w="100%"
-                        h="100%"
-                        key={item.id}   
-                    >
-                        <Image w="100%" h="100%" source={{uri: item.image.url}} resizeMode="stretch" alt="news"/>
-                    </Flex>
+                    <TouchableWithoutFeedback onPress={() => {item.snackRef ? navigation.navigate("Menu", {name: item.snackRef.category.name, selectedSnack: item.snackRef.name}) : ""}}>
+                        <Flex
+                            w="100%"
+                            h="100%"
+                            key={item.id}   
+                        >
+                            <Image w="100%" h="100%" source={{uri: item.image.url}} resizeMode="stretch" alt="news"/>
+                        </Flex>
+                    </TouchableWithoutFeedback>
                 )}
             />
+            
             )}
-      
     </>
     );
 }
