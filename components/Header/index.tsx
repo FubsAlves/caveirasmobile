@@ -46,8 +46,7 @@ export default function Header() {
       {route.params && route.params.name === "Chickens" ? (
         
         <Animated.Image
-        entering={FlipInEasyY.duration(1000)}
-        style={{height:dimensions.height * 0.12, width: dimensions.width * 0.25 }}
+        style={{height:dimensions.height * 0.13, width: dimensions.width * 0.29 }}
         source={require('../../assets/images/chickens-logo.webp')}
         alt="Chickens Logo"
       />   
@@ -55,7 +54,7 @@ export default function Header() {
         
         
         <Animated.Image
-          style={{height:dimensions.height * 0.15, width: dimensions.width * 0.25 }}
+          style={{height:dimensions.height * 0.13, width: dimensions.width * 0.29 }}
           source={require('../../assets/images/caveiras-logo.webp')}
           alt="Caveiras Logo"
         /> 
