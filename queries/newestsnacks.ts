@@ -6,6 +6,7 @@ const GET_NEWESTSNACKS = gql`
       id
       name
       description
+      isNew
       logoSrc {
         url
       }

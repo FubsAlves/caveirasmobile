@@ -5,6 +5,7 @@ const GET_SNACKS = gql`
         snacks (where: { category: { name : $params } }) {
             id
             name
+            isNew
             description
             price
             logoSrc {

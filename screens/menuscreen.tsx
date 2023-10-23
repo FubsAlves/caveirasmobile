@@ -15,6 +15,7 @@ import GET_NEWESTSNACKS from "../queries/newestsnacks";
 interface ItemProps {
   id: number;
   name: string;
+  isNew: boolean;
   logoSrc?: ImageSource;
   secondaryLogoSrc?: ImageSource;
   imageSrc?: ImageSource;
@@ -80,7 +81,7 @@ export default function MenuScreen() {
         <TouchableWithoutFeedback onPress={() => { }}>
 
           <Flex zIndex={1000} mt={4} width={dimensions.width * 0.8} height={dimensions.height * 0.4}>
-            <LottieView style={{position: "absolute", top: '5%', width: 55, height: 55 }} autoPlay loop={true} ref={animation} source={require('../assets/animation/newSnack.json')} />
+            {item.isNew || params === "Lançamentos" ? <LottieView style={{position: "absolute", top: '5%', width: 55, height: 55 }} autoPlay loop={true} ref={animation} source={require('../assets/animation/newSnack.json')} /> : ""}
             <ImageZoom
 
               style={{
